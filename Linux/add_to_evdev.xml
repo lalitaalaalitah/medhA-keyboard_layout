@@ -1,0 +1,9 @@
+<variant>         
+  <configItem>           
+    <name>sa</name>           
+    <description>sanskrit</description>           
+    <languageList>                                     
+      <iso639Id>sa</iso639Id>                         
+    </languageList>         
+  </configItem>       
+</variant>
