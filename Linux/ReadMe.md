@@ -1,10 +1,15 @@
 1. Download the file 'sa'
+
 ........................................................................................
 
 2. add this to evdev.xml
+
 download "add_to_evdev.xml"
+
 open it in some editor.
+
 paste the portion in evdev.xml.
+
 
 ........................................................................................
 
