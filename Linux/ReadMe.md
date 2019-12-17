@@ -4,18 +4,18 @@
 
 2. add this to evdev.xml
 
-download "add_to_evdev.xml"
+    download "add_to_evdev.xml"
 
-open it in some editor.
+    open it in some editor.
 
-paste the portion in evdev.xml.
+    paste the portion in evdev.xml.
 
 
 ........................................................................................
 
 3. Open termial and run this as superuser
 
-sudo setxkbmap -layout 'us,sa'
+    sudo setxkbmap -layout 'us,sa'
 
 ........................................................................................
 
