@@ -20,3 +20,8 @@
 ........................................................................................
 
 4. Set switching keys in keyboard options.
+
+........................................................................................
+
+If you are using Garuda Linux, then no need to use these.
+Go to Settings > Input Devices > Layouts and add  your new keyboard layout and add shortcut to  switch.
