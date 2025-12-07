@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.keyboardlayout.medha-macosx.1.5</string>
+	<key>CFBundleName</key>
+	<string>medhA-macOSX-v7</string>
+	<key>CFBundleVersion</key>
+	<string>7</string>
+	<key>KLInfo_medhA-macOSX-v7</key>
+	<dict>
+		<key>TICapsLockLanguageSwitchCapable</key>
+		<true/>
+		<key>TISIconIsTemplate</key>
+		<false/>
+		<key>TISInputSourceID</key>
+		<string>com.apple.keyboardlayout.medha-macosx.1.5.medha-macosx-v7</string>
+		<key>TISIntendedLanguage</key>
+		<string>sa</string>
+	</dict>
+</dict>
+</plist>
