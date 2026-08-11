@@ -22,7 +22,7 @@ An intuitive, high-efficiency Sanskrit / Devanagari keyboard layout available fo
 
 | Platform | Edition File / Package | Installation Method |
 | :--- | :--- | :--- |
-| **macOS** | `medhA-macOSX-v_1.7.bundle` | Bundle copy, Homebrew Cask, or Nix Flake |
+| **macOS** | `medhA.bundle` | Bundle copy, Homebrew Cask, or Nix Flake |
 | **Linux** | `sa` (XKB Symbols) | Automated `install.sh` (GNOME/KDE/X11/Wayland/NixOS) |
 | **Windows** | `medha-6.exe` | Executable setup installer |
 
@@ -48,7 +48,7 @@ brew install --cask medha-keyboard
 ```
 
 **Option B: Manual Bundle Copy**
-Download `medhA-keyboard-macOS.zip` and move `medhA-macOSX-v_1.7.bundle` to `~/Library/Keyboard Layouts/`.
+Download `medhA-keyboard-macOS.zip` and move `medhA.bundle` to `~/Library/Keyboard Layouts/`.
 
 ### Nix Flake Installation
 ```nix

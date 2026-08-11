@@ -6,7 +6,7 @@
     Website: https://www.lalitaalaalitah.com
     GitHub: https://github.com/lalitaalaalitah
 -->
-<keyboard group="126" id="17893" name="medhA-macOSX-v7" maxout="4">
+<keyboard group="126" id="17893" name="medhA" maxout="4">
     <layouts>
         <layout first="0" last="17" mapSet="984" modifiers="f4"/>
         <layout first="18" last="18" mapSet="16c" modifiers="f4"/>

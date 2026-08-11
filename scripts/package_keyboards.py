@@ -120,8 +120,8 @@ def package_mac_dmgs(repo_root: Path, out_dir: Path):
     mac_dir = repo_root / "MacOS"
     print(f"{FG_TEXT}Packaging macOS editions into individual DMGs...{CLR_RESET}")
 
-    # Version 1.7 DMG
-    bundle_17 = mac_dir / "medhA-macOSX-v_1.7.bundle"
+    # Active Canonical medhA.bundle
+    bundle_17 = mac_dir / "medhA.bundle"
     out_dmg_17 = out_dir / "medhA-keyboard-macOS-v1.7.dmg"
     _build_single_mac_dmg(bundle_17, "v1.7", "medhA Keyboard v1.7", out_dmg_17, out_dir)
 
