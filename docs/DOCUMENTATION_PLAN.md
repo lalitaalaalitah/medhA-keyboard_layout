@@ -34,12 +34,14 @@ macOS users looking for an elegant, high-efficiency Sanskrit / Devanagari input 
    - Typing conjunct consonants using Virama (`/`).
    - Typing Vedic accents (Udatta, Anudatta, Svara).
 
-### Screenshot Capture Inventory
-- [ ] `macOS_01_bundle_location.png`: Finder showing `medhA.bundle` inside `~/Library/Keyboard Layouts`.
-- [ ] `macOS_02_system_settings_input_source.png`: macOS System Settings -> Keyboard -> Input Sources adding medhA layout.
-- [ ] `macOS_03_keyboard_viewer_normal.png`: macOS Keyboard Viewer showing default layer.
-- [ ] `macOS_04_keyboard_viewer_shift.png`: macOS Keyboard Viewer showing Shifted layer.
-- [ ] `macOS_05_keyboard_viewer_option.png`: macOS Keyboard Viewer showing Option/AltGr layer.
+### Screenshot Capture Inventory (macOS Edition - Captured)
+- [x] `medhA_1.7_Installer.png`: Mounted DMG window with bundle and `Keyboard Layouts` shortcut.
+- [x] `medhA_1.7_Installed.png`: macOS System Settings -> Keyboard -> Input Sources showing active medhA-macOSX-v7 layout.
+- [x] `medhA_1.7_normal.png`: macOS Keyboard Viewer in Unshifted / Normal state.
+- [x] `medhA_1.7_shift.png`: macOS Keyboard Viewer in Shifted state.
+- [x] `medhA_1.7_CapsLock.png`: macOS Keyboard Viewer in CapsLock state.
+- [x] `medhA_1.7_CapsLock_Shift.png`: macOS Keyboard Viewer in CapsLock + Shift state.
+- [!] *Observation*: Option and Shift+Option states are currently unmapped in macOS v1.7 (logged as TODO item in `LAYOUT_PARITY_AND_ENHANCEMENT_ANALYSIS.md`).
 
 ---
 
