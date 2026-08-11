@@ -2,12 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleGetInfoString</key>
+	<string>medhA Sanskrit Keyboard Layout v1.7 by lalitaalaalitah (https://www.lalitaalaalitah.com)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.apple.keyboardlayout.medha-macosx.1.5</string>
+	<string>com.lalitaalaalitah.keyboardlayout.medha-macosx</string>
 	<key>CFBundleName</key>
-	<string>medhA-macOSX-v7</string>
+	<string>medhA-macOSX-v1.7</string>
 	<key>CFBundleVersion</key>
-	<string>7</string>
+	<string>1.7</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © lalitaalaalitah. https://www.lalitaalaalitah.com https://github.com/lalitaalaalitah</string>
 	<key>KLInfo_medhA-macOSX-v7</key>
 	<dict>
 		<key>TICapsLockLanguageSwitchCapable</key>
@@ -15,9 +19,9 @@
 		<key>TISIconIsTemplate</key>
 		<false/>
 		<key>TISInputSourceID</key>
-		<string>com.apple.keyboardlayout.medha-macosx.1.5.medha-macosx-v7</string>
+		<string>com.lalitaalaalitah.keyboardlayout.medha-macosx.medha-macosx-v1.7</string>
 		<key>TISIntendedLanguage</key>
-		<string>sa</string>
+		<string>sa-Deva</string>
 	</dict>
 </dict>
 </plist>
