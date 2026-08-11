@@ -5,8 +5,8 @@ medhA Keyboard Layout Multi-Platform Packaging Tool
 Author       : lalitaalaalitah
 Website      : https://www.lalitaalaalitah.com
 GitHub       : https://github.com/lalitaalaalitah
-Version      : 1.1.0
-Description  : Packages macOS (DMG format with drag-and-drop hints), Linux, and Windows editions of medhA keyboard layout.
+Version      : 1.2.0
+Description  : Packages per-version macOS DMGs (with drag-and-drop hints), Linux, and Windows editions of medhA keyboard layout.
 """
 
 import os
@@ -18,7 +18,7 @@ import tarfile
 import zipfile
 from pathlib import Path
 
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 __author__ = "lalitaalaalitah"
 __website__ = "https://www.lalitaalaalitah.com"
 __github__ = "https://github.com/lalitaalaalitah"
@@ -44,33 +44,24 @@ def print_banner():
     print(f"{CLR_RESET}")
 
 
-def package_mac_dmg(repo_root: Path, out_dir: Path) -> Path:
-    mac_dir = repo_root / "MacOS"
-    out_dmg = out_dir / "medhA-keyboard-macOS.dmg"
-    dmg_stage = out_dir / "macOS_dmg_stage"
+def _build_single_mac_dmg(bundle_path: Path, ver_label: str, vol_name: str, out_dmg: Path, out_dir: Path):
+    if not bundle_path.exists():
+        print(f"{FG_YELLOW}   [WARN] Bundle not found: {bundle_path}{CLR_RESET}")
+        return
 
-    print(f"{FG_TEXT}Packaging macOS DMG -> {FG_YELLOW}{out_dmg.name}{CLR_RESET}")
-
+    dmg_stage = out_dir / f"macOS_dmg_stage_{ver_label}"
     if dmg_stage.exists():
         shutil.rmtree(dmg_stage)
     dmg_stage.mkdir(parents=True, exist_ok=True)
 
-    # 1. Copy bundles into staging folder
-    bundle_17 = mac_dir / "medhA-macOSX-v_1.7.bundle"
-    bundle_16 = mac_dir / "medhA_1.6_working.bundle"
-
-    if bundle_17.exists():
-        shutil.copytree(bundle_17, dmg_stage / bundle_17.name)
-    if bundle_16.exists():
-        shutil.copytree(bundle_16, dmg_stage / bundle_16.name)
+    # 1. Copy target bundle
+    shutil.copytree(bundle_path, dmg_stage / bundle_path.name)
 
     # 2. Create Drag-and-Drop Symlinks to Keyboard Layouts directories
-    # System-wide install directory (/Library/Keyboard Layouts)
     system_kb_symlink = dmg_stage / "System Keyboard Layouts"
     if not system_kb_symlink.exists():
         os.symlink("/Library/Keyboard Layouts", system_kb_symlink)
 
-    # Per-user install directory (~/Library/Keyboard Layouts)
     user_kb_path = os.path.expanduser("~/Library/Keyboard Layouts")
     user_kb_symlink = dmg_stage / "User Keyboard Layouts"
     if not user_kb_symlink.exists():
@@ -78,9 +69,9 @@ def package_mac_dmg(repo_root: Path, out_dir: Path) -> Path:
 
     # 3. Add clear drag-and-drop instruction file
     instructions = (
-        "medhA Sanskrit Keyboard Layout Installation Instructions:\n"
-        "=========================================================\n\n"
-        "1. Drag 'medhA-macOSX-v_1.7.bundle' (or 'medhA_1.6_working.bundle') into either:\n"
+        f"medhA Sanskrit Keyboard Layout ({ver_label}) Installation Instructions:\n"
+        "======================================================================\n\n"
+        f"1. Drag '{bundle_path.name}' into either:\n"
         "   - 'User Keyboard Layouts' (Install for current user: ~/Library/Keyboard Layouts)\n"
         "   - 'System Keyboard Layouts' (Install for all users: /Library/Keyboard Layouts)\n\n"
         "2. Open System Settings -> Keyboard -> Input Sources.\n"
@@ -93,13 +84,13 @@ def package_mac_dmg(repo_root: Path, out_dir: Path) -> Path:
     if out_dmg.exists():
         out_dmg.unlink()
 
-    # 4. Build DMG using hdiutil if available (macOS)
+    # 4. Build DMG using hdiutil if available
     if shutil.which("hdiutil"):
         cmd = [
             "hdiutil",
             "create",
             "-volname",
-            "medhA Keyboard Layout",
+            vol_name,
             "-srcfolder",
             str(dmg_stage),
             "-ov",
@@ -109,23 +100,43 @@ def package_mac_dmg(repo_root: Path, out_dir: Path) -> Path:
         ]
         res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         if res.returncode != 0:
-            print(f"{FG_RED}Error running hdiutil: {res.stderr}{CLR_RESET}")
-            sys.exit(res.returncode)
-        print(f"{FG_GREEN}   [OK] Generated DMG: {out_dmg}{CLR_RESET}")
+            print(f"{FG_RED}Error running hdiutil for {ver_label}: {res.stderr}{CLR_RESET}")
+        else:
+            print(f"{FG_GREEN}   [OK] Generated DMG ({ver_label}): {out_dmg}{CLR_RESET}")
     else:
-        print(f"{FG_YELLOW}   [WARN] 'hdiutil' not found (non-macOS system). Creating fallback ZIP for macOS files.{CLR_RESET}")
-        out_zip = out_dir / "medhA-keyboard-macOS.zip"
+        out_zip = out_dir / f"medhA-keyboard-macOS-{ver_label}.zip"
         with zipfile.ZipFile(out_zip, "w", zipfile.ZIP_DEFLATED) as zf:
             for root, dirs, files in os.walk(dmg_stage):
                 for file in files:
                     file_path = Path(root) / file
                     rel_path = file_path.relative_to(dmg_stage)
                     zf.write(file_path, rel_path)
-        print(f"{FG_GREEN}   [OK] Generated Fallback ZIP: {out_zip}{CLR_RESET}")
+        print(f"{FG_GREEN}   [OK] Generated Fallback ZIP ({ver_label}): {out_zip}{CLR_RESET}")
 
-    # Cleanup temporary staging directory
     shutil.rmtree(dmg_stage, ignore_errors=True)
-    return out_dmg
+
+
+def package_mac_dmgs(repo_root: Path, out_dir: Path):
+    mac_dir = repo_root / "MacOS"
+    print(f"{FG_TEXT}Packaging macOS editions into individual DMGs...{CLR_RESET}")
+
+    # Version 1.7 DMG
+    bundle_17 = mac_dir / "medhA-macOSX-v_1.7.bundle"
+    out_dmg_17 = out_dir / "medhA-keyboard-macOS-v1.7.dmg"
+    _build_single_mac_dmg(bundle_17, "v1.7", "medhA Keyboard v1.7", out_dmg_17, out_dir)
+
+    # Version 1.6 DMG
+    bundle_16 = mac_dir / "medhA_1.6_working.bundle"
+    out_dmg_16 = out_dir / "medhA-keyboard-macOS-v1.6.dmg"
+    _build_single_mac_dmg(bundle_16, "v1.6", "medhA Keyboard v1.6", out_dmg_16, out_dir)
+
+    # Create default latest symlink / copy for medhA-keyboard-macOS.dmg pointing to v1.7
+    out_dmg_default = out_dir / "medhA-keyboard-macOS.dmg"
+    if out_dmg_17.exists():
+        if out_dmg_default.exists():
+            out_dmg_default.unlink()
+        shutil.copy2(out_dmg_17, out_dmg_default)
+        print(f"{FG_GREEN}   [OK] Generated Default macOS DMG (v1.7 alias): {out_dmg_default}{CLR_RESET}")
 
 
 def package_linux(repo_root: Path, out_dir: Path) -> Path:
@@ -181,7 +192,6 @@ def package_all_combined(repo_root: Path, out_dir: Path) -> Path:
                     rel_path = file_path.relative_to(repo_root)
                     zf.write(file_path, rel_path)
 
-        # Add root README.md & HOW_TO_USE.md if present
         for doc_name in ["README.md", "HOW_TO_USE.md"]:
             doc_path = repo_root / doc_name
             if doc_path.exists():
@@ -224,7 +234,7 @@ def main():
     print(f"{FG_BLUE}Output Directory: {out_dir}{CLR_RESET}\n")
 
     if args.platform in ["mac", "all"]:
-        package_mac_dmg(repo_root, out_dir)
+        package_mac_dmgs(repo_root, out_dir)
     if args.platform in ["linux", "all"]:
         package_linux(repo_root, out_dir)
     if args.platform in ["windows", "all"]:
