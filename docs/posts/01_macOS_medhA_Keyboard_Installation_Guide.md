@@ -18,9 +18,10 @@ The **`medhA` keyboard layout for macOS** brings the trusted Devanagari typing s
 
 ### Method A: Drag-and-Drop Installation via DMG (Recommended)
 
-1. Download **`medhA-keyboard-macOS-v1.7.dmg`** from the [GitHub Releases](https://github.com/lalitaalaalitah/medhA-keyboard_layout/releases).
-2. Double-click the downloaded `.dmg` file to mount it.
-3. Simply **drag the `medhA-macOSX-v_1.7.bundle`** file into the **`Keyboard Layouts`** shortcut folder.
+3. Simply **drag the `medhA.bundle`** file into the **`Keyboard Layouts`** shortcut folder.
+
+> **Important Note for Upgrading Users**: If you previously installed an older version with a versioned filename (such as `medhA-macOSX.1.5.bundle` or `medhA-macOSX-v_1.7.bundle`), please delete those older bundle files from your `Keyboard Layouts` folder to avoid duplicate entries in System Settings.
+> For detailed uninstallation instructions across macOS, Linux, and Windows, see **[UNINSTALLATION_GUIDE.md](../UNINSTALLATION_GUIDE.md)**.
 
 ![medhA 1.7 DMG Installer](../screenshots/medhA_macOS/medhA_1.7_Installer.png)
 
