@@ -54,8 +54,9 @@ def _build_single_mac_dmg(bundle_path: Path, ver_label: str, vol_name: str, out_
         shutil.rmtree(dmg_stage)
     dmg_stage.mkdir(parents=True, exist_ok=True)
 
-    # 1. Copy target bundle
-    shutil.copytree(bundle_path, dmg_stage / bundle_path.name)
+    # 1. Copy target bundle with canonical name medhA.bundle for clean in-place replacement
+    canonical_bundle_name = "medhA.bundle"
+    shutil.copytree(bundle_path, dmg_stage / canonical_bundle_name)
 
     # 2. Create Drag-and-Drop Symlink to system Keyboard Layouts directory (/Library/Keyboard Layouts)
     kb_symlink = dmg_stage / "Keyboard Layouts"
@@ -66,8 +67,9 @@ def _build_single_mac_dmg(bundle_path: Path, ver_label: str, vol_name: str, out_
     instructions = (
         f"medhA Sanskrit Keyboard Layout ({ver_label}) Installation Instructions:\n"
         "======================================================================\n\n"
-        f"1. Drag '{bundle_path.name}' into the 'Keyboard Layouts' shortcut folder.\n"
-        "   (This installs the layout to /Library/Keyboard Layouts)\n\n"
+        "1. Drag 'medhA.bundle' into the 'Keyboard Layouts' shortcut folder.\n"
+        "   If an older version exists, click 'Replace' to upgrade in place.\n"
+        "   (This installs the layout to /Library/Keyboard Layouts/medhA.bundle)\n\n"
         "2. Open System Settings -> Keyboard -> Input Sources.\n"
         "3. Click '+' (Add Input Source), search for Sanskrit or English (US), and select 'medhA'.\n\n"
         "Author: lalitaalaalitah | https://www.lalitaalaalitah.com\n"
