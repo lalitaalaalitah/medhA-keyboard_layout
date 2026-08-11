@@ -8,12 +8,15 @@
 
 ## 1. Installation Guide
 
-### macOS
-1. Download `medhA-keyboard-macOS.zip` from the latest release.
-2. Extract the archive and copy `medhA-macOSX-v_1.7.bundle` to `/Library/Keyboard Layouts/` (for all users) or `~/Library/Keyboard Layouts/` (for current user).
-3. Open **System Settings** -> **Keyboard** -> **Input Sources**.
-4. Click **+**, search for **Sanskrit** or **English (US)**, and select `medhA-macOSX-v7`.
-5. Switch between input sources using `Control + Space` or `Globe key`.
+### macOS (.dmg Installation)
+1. Download `medhA-keyboard-macOS.dmg` from the latest release.
+2. Double-click `medhA-keyboard-macOS.dmg` to mount the disk image.
+3. Simply **drag and drop** `medhA-macOSX-v_1.7.bundle` (or `medhA_1.6_working.bundle`) into either:
+   - **`User Keyboard Layouts`** (shortcut to `~/Library/Keyboard Layouts` for current user)
+   - **`System Keyboard Layouts`** (shortcut to `/Library/Keyboard Layouts` for all users)
+4. Open **System Settings** -> **Keyboard** -> **Input Sources**.
+5. Click **+**, search for **Sanskrit** or **English (US)**, and select `medhA-macOSX-v7`.
+6. Switch between input sources using `Control + Space` or `Globe key`.
 
 ### Linux (Debian, Ubuntu, Pop!_OS, Arch, Manjaro, Fedora, NixOS)
 1. Download `medhA-keyboard-Linux.tar.gz` from the latest release.
@@ -58,10 +61,11 @@ To package all platform release archives locally into `dist/`:
 python3 scripts/package_keyboards.py --platform all
 ```
 
-Options:
-- `--platform`: `all`, `mac`, `linux`, `windows`
-- `--outdir`: Custom output directory (default: `dist`)
-- `--version`: Displays script version and author metadata.
+Outputs archives into `dist/`:
+- `medhA-keyboard-macOS.dmg`
+- `medhA-keyboard-Linux.tar.gz`
+- `medhA-keyboard-Windows.zip`
+- `medhA-keyboard-All-Platforms.zip`
 
 ---
 

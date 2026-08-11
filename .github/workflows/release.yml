@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   build-and-release:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       - name: Checkout Code
@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Package Keyboard Layouts
+      - name: Package Keyboard Layouts (DMG for macOS, TAR for Linux, ZIP for Windows)
         run: |
           python3 scripts/package_keyboards.py --platform all --outdir dist
 
@@ -29,7 +29,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            dist/medhA-keyboard-macOS.zip
+            dist/medhA-keyboard-macOS.dmg
             dist/medhA-keyboard-Linux.tar.gz
             dist/medhA-keyboard-Windows.zip
             dist/medhA-keyboard-All-Platforms.zip
