@@ -11,7 +11,7 @@
 ### macOS (.dmg Installation)
 1. Download `medhA-keyboard-macOS.dmg` from the latest release.
 2. Double-click `medhA-keyboard-macOS.dmg` to mount the disk image.
-3. Simply **drag and drop** `medhA-macOSX-v_1.7.bundle` (or `medhA_1.6_working.bundle`) into the **`Keyboard Layouts`** shortcut folder (which links to `/Library/Keyboard Layouts`).
+3. Simply **drag and drop** **`medhA.bundle`** into the **`Keyboard Layouts`** shortcut folder (which links to `/Library/Keyboard Layouts`). If an older version of `medhA.bundle` exists, click **Replace** to upgrade in-place.
 4. Open **System Settings** -> **Keyboard** -> **Input Sources**.
 5. Click **+**, search for **Sanskrit** or **English (US)**, and select `medhA-macOSX-v7`.
 6. Switch between input sources using `Control + Space` or `Globe key`.
