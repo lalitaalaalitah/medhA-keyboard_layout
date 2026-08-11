@@ -70,8 +70,12 @@ def _build_single_mac_dmg(bundle_path: Path, ver_label: str, vol_name: str, out_
         "1. Drag 'medhA.bundle' into the 'Keyboard Layouts' shortcut folder.\n"
         "   If an older version exists, click 'Replace' to upgrade in place.\n"
         "   (This installs the layout to /Library/Keyboard Layouts/medhA.bundle)\n\n"
-        "2. Open System Settings -> Keyboard -> Input Sources.\n"
-        "3. Click '+' (Add Input Source), search for Sanskrit or English (US), and select 'medhA'.\n\n"
+        "2. UPGRADE NOTE: If you previously installed an older version under a\n"
+        "   different filename (such as 'medhA-macOSX.1.5.bundle' or 'medhA-macOSX-v_1.7.bundle'),\n"
+        "   please delete those older bundle files from Keyboard Layouts to avoid duplicates.\n\n"
+        "3. Open System Settings -> Keyboard -> Input Sources.\n"
+        "4. Click '+' (Add Input Source), search for Sanskrit or English (US), and select 'medhA'.\n\n"
+        "For complete uninstallation details, see docs/UNINSTALLATION_GUIDE.md\n"
         "Author: lalitaalaalitah | https://www.lalitaalaalitah.com\n"
     )
     with open(dmg_stage / "INSTALL_INSTRUCTIONS.txt", "w", encoding="utf-8") as f:

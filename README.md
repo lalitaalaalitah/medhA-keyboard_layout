@@ -72,6 +72,7 @@ Outputs archives into `dist/`:
 ## Documentation & Future Roadmap
 
 - **[HOW_TO_USE.md](HOW_TO_USE.md)**: Exhaustive multi-distro and multi-OS installation guide.
+- **[docs/UNINSTALLATION_GUIDE.md](docs/UNINSTALLATION_GUIDE.md)**: Uninstallation & legacy version cleanup guide.
 - **[docs/DOCUMENTATION_PLAN.md](docs/DOCUMENTATION_PLAN.md)**: Blog post roadmap & screenshot inventory for `code.lalitaalaalitah.com`.
 - **[docs/HOMEBREW_RELEASE_PLAN.md](docs/HOMEBREW_RELEASE_PLAN.md)**: Homebrew Cask distribution plan.
 - **[docs/LAYOUT_PARITY_AND_ENHANCEMENT_ANALYSIS.md](docs/LAYOUT_PARITY_AND_ENHANCEMENT_ANALYSIS.md)**: [TODO] Layout parity & character mapping enhancement analysis.

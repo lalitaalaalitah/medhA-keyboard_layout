@@ -6,14 +6,23 @@
 
 ---
 
+## Important Note for Upgrading Users
+
+> [!IMPORTANT]
+> If you are upgrading from an older version of `medhA` (such as `v1.3`, `v1.5`, or `v1.7`), please delete or remove older bundle files (e.g. `medhA-macOSX.1.5.bundle` or `medhA-macOSX-v_1.7.bundle`) from your `Keyboard Layouts` folder to avoid duplicate or confusing layout entries in System Settings.
+> 
+> For full step-by-step uninstallation and legacy cleanup instructions across all platforms, see **[UNINSTALLATION_GUIDE.md](docs/UNINSTALLATION_GUIDE.md)**.
+
+---
+
 ## 1. Installation Guide
 
 ### macOS (.dmg Installation)
 1. Download `medhA-keyboard-macOS.dmg` from the latest release.
 2. Double-click `medhA-keyboard-macOS.dmg` to mount the disk image.
-3. Simply **drag and drop** **`medhA.bundle`** into the **`Keyboard Layouts`** shortcut folder (which links to `/Library/Keyboard Layouts`). If an older version of `medhA.bundle` exists, click **Replace** to upgrade in-place.
+3. Drag and drop **`medhA.bundle`** into the **`Keyboard Layouts`** shortcut folder (links to `/Library/Keyboard Layouts`). If prompted, click **Replace**.
 4. Open **System Settings** -> **Keyboard** -> **Input Sources**.
-5. Click **+**, search for **Sanskrit** or **English (US)**, and select `medhA-macOSX-v7`.
+5. Click **+**, search for **Sanskrit** or **English (US)**, and select `medhA`.
 6. Switch between input sources using `Control + Space` or `Globe key`.
 
 ### Linux (Debian, Ubuntu, Pop!_OS, Arch, Manjaro, Fedora, NixOS)
@@ -23,7 +32,7 @@
    tar -xvf medhA-keyboard-Linux.tar.gz
    cd Linux
    ```
-3. Run the automated installer:
+3. Run the automated installer (automatically replaces previous `sa` symbol file and clears XKB cache):
    ```bash
    sudo ./install.sh
    ```
@@ -67,13 +76,6 @@ Outputs archives into `dist/`:
 
 ---
 
-## 3. Uninstallation
+## 3. Uninstallation & Legacy Cleanup
 
-### Linux
-```bash
-cd Linux
-sudo ./uninstall.sh
-```
-
-### macOS
-Remove `medhA-macOSX-v_1.7.bundle` from `~/Library/Keyboard Layouts/` or `/Library/Keyboard Layouts/`.
+For detailed platform-specific uninstallation steps, see **[UNINSTALLATION_GUIDE.md](docs/UNINSTALLATION_GUIDE.md)**.
