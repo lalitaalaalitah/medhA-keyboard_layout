@@ -40,6 +40,14 @@ sudo ./install.sh
 ```
 
 ### macOS Installation
+
+**Option A: Via Homebrew Cask (Recommended)**
+```bash
+brew tap lalitaalaalitah/tap
+brew install --cask medha-keyboard
+```
+
+**Option B: Manual Bundle Copy**
 Download `medhA-keyboard-macOS.zip` and move `medhA-macOSX-v_1.7.bundle` to `~/Library/Keyboard Layouts/`.
 
 ### Nix Flake Installation
