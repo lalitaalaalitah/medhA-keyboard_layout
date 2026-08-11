@@ -17,7 +17,13 @@
 
 ## 1. Installation Guide
 
-### macOS (.dmg Installation)
+### macOS (Homebrew Cask Installation - Recommended)
+```bash
+brew tap lalitaalaalitah/tap
+brew install --cask medha-keyboard
+```
+
+### macOS (.dmg Manual Installation)
 1. Download `medhA-keyboard-macOS.dmg` from the latest release.
 2. Double-click `medhA-keyboard-macOS.dmg` to mount the disk image.
 3. Drag and drop **`medhA.bundle`** into the **`Keyboard Layouts`** shortcut folder (links to `/Library/Keyboard Layouts`). If prompted, click **Replace**.
