@@ -22,7 +22,7 @@ The **`medhA` keyboard layout for macOS** brings the trusted Devanagari typing s
 2. Double-click the downloaded `.dmg` file to mount it.
 3. Simply **drag the `medhA-macOSX-v_1.7.bundle`** file into the **`Keyboard Layouts`** shortcut folder.
 
-![medhA 1.7 DMG Installer](/Volumes/Cablet_WD_2TB_20251206/05_Development/Github/24_Keyboards/01_medhA-keyboard_layout/docs/screenshots/medhA_macOS/medhA_1.7_Installer.png)
+![medhA 1.7 DMG Installer](../screenshots/medhA_macOS/medhA_1.7_Installer.png)
 
 ---
 
@@ -67,7 +67,7 @@ environment.systemPackages = [ inputs.medhA-keyboard.packages.aarch64-darwin.def
 4. Select **`medhA-macOSX-v7`** (or `medhA`) and click **Add**.
 5. Switch between keyboard layouts using **`Control + Space`** or the Globe key.
 
-![medhA 1.7 Installed in System Settings](/Volumes/Cablet_WD_2TB_20251206/05_Development/Github/24_Keyboards/01_medhA-keyboard_layout/docs/screenshots/medhA_macOS/medhA_1.7_Installed.png)
+![medhA 1.7 Installed in System Settings](../screenshots/medhA_macOS/medhA_1.7_Installed.png)
 
 ---
 
@@ -78,28 +78,28 @@ Here are the official keymap layer images captured directly from macOS Keyboard 
 ### 3.1 Normal / Unshifted State
 Default key placements for matras, primary consonants, anusvara, and visarga.
 
-![medhA 1.7 Keyboard Viewer Normal](/Volumes/Cablet_WD_2TB_20251206/05_Development/Github/24_Keyboards/01_medhA-keyboard_layout/docs/screenshots/medhA_macOS/medhA_1.7_normal.png)
+![medhA 1.7 Keyboard Viewer Normal](../screenshots/medhA_macOS/medhA_1.7_normal.png)
 
 ---
 
 ### 3.2 Shift State
 Holding **`Shift`** accesses full vowels (अ, आ, इ, ई, उ, ऊ, ऋ, ॠ), aspirated consonants (ख, घ, छ, झ, ठ, ढ, थ, ध, फ, भ), and double danda (॥).
 
-![medhA 1.7 Keyboard Viewer Shift](/Volumes/Cablet_WD_2TB_20251206/05_Development/Github/24_Keyboards/01_medhA-keyboard_layout/docs/screenshots/medhA_macOS/medhA_1.7_shift.png)
+![medhA 1.7 Keyboard Viewer Shift](../screenshots/medhA_macOS/medhA_1.7_shift.png)
 
 ---
 
 ### 3.3 Caps Lock State
 Turning on **`CapsLock`** locks the layout into uppercase / Shifted Devanagari mappings for continuous typing.
 
-![medhA 1.7 Keyboard Viewer CapsLock](/Volumes/Cablet_WD_2TB_20251206/05_Development/Github/24_Keyboards/01_medhA-keyboard_layout/docs/screenshots/medhA_macOS/medhA_1.7_CapsLock.png)
+![medhA 1.7 Keyboard Viewer CapsLock](../screenshots/medhA_macOS/medhA_1.7_CapsLock.png)
 
 ---
 
 ### 3.4 Caps Lock + Shift State
 Combining **`CapsLock + Shift`** dynamically inverts the state back to unshifted matras and consonants.
 
-![medhA 1.7 Keyboard Viewer CapsLock Shift](/Volumes/Cablet_WD_2TB_20251206/05_Development/Github/24_Keyboards/01_medhA-keyboard_layout/docs/screenshots/medhA_macOS/medhA_1.7_CapsLock_Shift.png)
+![medhA 1.7 Keyboard Viewer CapsLock Shift](../screenshots/medhA_macOS/medhA_1.7_CapsLock_Shift.png)
 
 ---
 
