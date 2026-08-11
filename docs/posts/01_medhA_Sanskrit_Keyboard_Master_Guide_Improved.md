@@ -70,8 +70,8 @@ The `medhA` layout design relies on three core principles:
 - **Homebrew Cask**: `brew install lalitaalaalitah/tap/medha-keyboard`
 - **Nix Flake**: Add `inputs.medhA-keyboard.packages.aarch64-darwin.default` to your `nix-darwin` configuration.
 
-![medhA 1.7 DMG Installer](/Volumes/Cablet_WD_2TB_20251206/05_Development/Github/24_Keyboards/01_medhA-keyboard_layout/docs/screenshots/medhA_macOS/medhA_1.7_Installer.png)
-![medhA 1.7 Installed in System Settings](/Volumes/Cablet_WD_2TB_20251206/05_Development/Github/24_Keyboards/01_medhA-keyboard_layout/docs/screenshots/medhA_macOS/medhA_1.7_Installed.png)
+![medhA 1.7 DMG Installer](../screenshots/medhA_macOS/medhA_1.7_Installer.png)
+![medhA 1.7 Installed in System Settings](../screenshots/medhA_macOS/medhA_1.7_Installed.png)
 
 ---
 
@@ -109,13 +109,13 @@ The `medhA` layout design relies on three core principles:
 Captured directly from the macOS Keyboard Viewer for version 1.7:
 
 ### 5.1 Default (Unshifted) State
-![medhA 1.7 Keyboard Viewer Normal](/Volumes/Cablet_WD_2TB_20251206/05_Development/Github/24_Keyboards/01_medhA-keyboard_layout/docs/screenshots/medhA_macOS/medhA_1.7_normal.png)
+![medhA 1.7 Keyboard Viewer Normal](../screenshots/medhA_macOS/medhA_1.7_normal.png)
 
 ### 5.2 Shifted State
-![medhA 1.7 Keyboard Viewer Shift](/Volumes/Cablet_WD_2TB_20251206/05_Development/Github/24_Keyboards/01_medhA-keyboard_layout/docs/screenshots/medhA_macOS/medhA_1.7_shift.png)
+![medhA 1.7 Keyboard Viewer Shift](../screenshots/medhA_macOS/medhA_1.7_shift.png)
 
 ### 5.3 CapsLock State
-![medhA 1.7 Keyboard Viewer CapsLock](/Volumes/Cablet_WD_2TB_20251206/05_Development/Github/24_Keyboards/01_medhA-keyboard_layout/docs/screenshots/medhA_macOS/medhA_1.7_CapsLock.png)
+![medhA 1.7 Keyboard Viewer CapsLock](../screenshots/medhA_macOS/medhA_1.7_CapsLock.png)
 
 ---
 
