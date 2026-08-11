@@ -10,7 +10,7 @@
 
 set -euo pipefail
 
-VERSION="1.0.0"
+VERSION="1.0.1"
 
 # Catppuccin Mocha Color Palette
 BG_BASE='\033[48;2;30;30;46m'
@@ -57,16 +57,20 @@ fi
 
 echo -e "${FG_TEXT}Detected Linux Distribution: ${FG_YELLOW}${DISTRO}${CLR_RESET}"
 
-# 1. Install symbol file
-echo -e "${FG_TEXT}1. Copying XKB symbol file 'sa' to ${XKB_SYMBOLS_DIR}/sa...${CLR_RESET}"
+# 1. Install/Replace symbol file
+echo -e "${FG_TEXT}1. Installing / Replacing XKB symbol file 'sa' in ${XKB_SYMBOLS_DIR}/sa...${CLR_RESET}"
 if [[ ! -f "${SCRIPT_DIR}/sa" ]]; then
     echo -e "${FG_RED}Error: Symbol file 'sa' not found in ${SCRIPT_DIR}${CLR_RESET}"
     exit 1
 fi
 
-cp "${SCRIPT_DIR}/sa" "${XKB_SYMBOLS_DIR}/sa"
+if [[ -f "${XKB_SYMBOLS_DIR}/sa" ]]; then
+    echo -e "${FG_YELLOW}   [UPGRADE] Existing 'sa' symbol file found. Overwriting with latest version...${CLR_RESET}"
+fi
+
+cp -f "${SCRIPT_DIR}/sa" "${XKB_SYMBOLS_DIR}/sa"
 chmod 644 "${XKB_SYMBOLS_DIR}/sa"
-echo -e "${FG_GREEN}   [OK] Symbol file installed.${CLR_RESET}"
+echo -e "${FG_GREEN}   [OK] Symbol file updated successfully.${CLR_RESET}"
 
 # 2. Register in evdev.xml
 register_in_xml() {
@@ -75,16 +79,15 @@ register_in_xml() {
         return 0
     fi
 
-    echo -e "${FG_TEXT}2. Registering layout in ${target_xml}...${CLR_RESET}"
+    echo -e "${FG_TEXT}2. Registering / Verifying layout in ${target_xml}...${CLR_RESET}"
 
     # Backup XML before edit
     cp "$target_xml" "${target_xml}.medha_bak"
 
     # Check if 'sa' variant already registered
     if grep -q "<name>sa</name>" "$target_xml"; then
-        echo -e "${FG_YELLOW}   [INFO] 'sa' variant is already registered in ${target_xml}.${CLR_RESET}"
+        echo -e "${FG_GREEN}   [OK] 'sa' variant registration verified in ${target_xml}.${CLR_RESET}"
     else
-        # Inject variant entry inside us layout rules if possible, or before </variantList>
         python3 -c "
 import sys
 xml_path = sys.argv[1]
@@ -115,10 +118,17 @@ if '</variantList>' in content:
 register_in_xml "$XKB_EVDEV_XML"
 register_in_xml "$XKB_EVDEV_EXTRAS_XML"
 
-# 3. Distro-specific post installation hints
+# 3. Clear XKB compiled keymap cache if present to ensure instant update
+if [[ -d /var/lib/xkb ]]; then
+    echo -e "${FG_TEXT}3. Refreshing XKB compiled keymap cache...${CLR_RESET}"
+    rm -f /var/lib/xkb/*.xkm 2>/dev/null || true
+    echo -e "${FG_GREEN}   [OK] XKB cache cleared.${CLR_RESET}"
+fi
+
+# 4. Distro-specific post installation hints
 echo -e "${FG_LAVENDER}"
 echo "================================================================="
-echo "                    Installation Complete!                      "
+echo "               Installation / Upgrade Complete!                  "
 echo "================================================================="
 echo -e "${CLR_RESET}"
 
