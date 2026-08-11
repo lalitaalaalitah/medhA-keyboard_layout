@@ -1,35 +1,43 @@
-# Installing & Mastering medhA Sanskrit Keyboard Layout on macOS
+# medhA Keyboard Layout for macOS (Version 1.7 Update & Setup Guide)
 
 **Author**: `lalitaalaalitah`  
 **Website**: [https://www.lalitaalaalitah.com](https://www.lalitaalaalitah.com)  
+**Original Article**: [https://eng.lalitaalaalitah.com/medha-mac-os/](https://eng.lalitaalaalitah.com/medha-mac-os/)  
 **Published on**: [code.lalitaalaalitah.com](https://code.lalitaalaalitah.com)  
-**Repository**: [github.com/lalitaalaalitah/medhA-keyboard_layout](https://github.com/lalitaalaalitah/medhA-keyboard_layout)  
+**GitHub Repository**: [github.com/lalitaalaalitah/medhA-keyboard_layout](https://github.com/lalitaalaalitah/medhA-keyboard_layout)  
 
 ---
 
-## Introduction
+## Introduction & Design Scheme
 
-The **`medhA` Sanskrit Keyboard Layout** is an intuitive, phonetically structured input layout designed for fast, accurate typing of Sanskrit, Hindi, and classical Devanagari texts. On macOS, `medhA` integrates natively into Apple's Text Input Services, giving you system-wide Devanagari typing across Xcode, VS Code, TextEdit, Pages, and terminal emulators.
-
-This guide details the three installation methods on macOS, activation steps, and complete keymap visual references for version 1.7.
+The **`medhA` keyboard layout for macOS** brings the trusted Devanagari typing scheme from Windows and Linux to Apple Mac computers. If you are switching to macOS, `medhA` ensures you feel right at home with identical sound-based key placements for Sanskrit, Hindi, Marathi, Nepali, and other Devanagari-script languages.
 
 ---
 
 ## 1. Installation Methods on macOS
 
-### Method A: Drag-and-Drop Installation via DMG Disk Image (Recommended)
+### Method A: Drag-and-Drop Installation via DMG (Recommended)
 
 1. Download **`medhA-keyboard-macOS-v1.7.dmg`** from the [GitHub Releases](https://github.com/lalitaalaalitah/medhA-keyboard_layout/releases).
-2. Double-click the DMG to mount it.
-3. Drag **`medhA-macOSX-v_1.7.bundle`** directly into the **`Keyboard Layouts`** shortcut folder (which links to `/Library/Keyboard Layouts`).
+2. Double-click the downloaded `.dmg` file to mount it.
+3. Simply **drag the `medhA-macOSX-v_1.7.bundle`** file into the **`Keyboard Layouts`** shortcut folder.
 
 ![medhA 1.7 DMG Installer](/Volumes/Cablet_WD_2TB_20251206/05_Development/Github/24_Keyboards/01_medhA-keyboard_layout/docs/screenshots/medhA_macOS/medhA_1.7_Installer.png)
 
 ---
 
-### Method B: Homebrew Cask
+### Method B: Manual Bundle Copying in Finder
 
-If you use Homebrew, you can install `medhA` with a single command:
+1. Download `medhA-macOSX-v_1.7.bundle`.
+2. Open **Finder**, press **`Command + Shift + G`** (Go to Folder).
+3. Type **`~/Library/Keyboard Layouts`** (for current user) or **`/Library/Keyboard Layouts`** (for all users) and press **Enter**.
+4. Paste `medhA-macOSX-v_1.7.bundle` inside the folder.
+
+---
+
+### Method C: Homebrew Cask
+
+Install directly via terminal using Homebrew:
 
 ```bash
 brew install lalitaalaalitah/tap/medha-keyboard
@@ -37,81 +45,76 @@ brew install lalitaalaalitah/tap/medha-keyboard
 
 ---
 
-### Method C: Declarative Nix Setup (`nix-darwin`)
+### Method D: Declarative Nix Setup (`nix-darwin`)
 
-For users managing macOS with `nix-darwin` or Home Manager:
+For users managing macOS via `nix-darwin`:
 
 ```nix
 # In your flake.nix inputs:
 inputs.medhA-keyboard.url = "github:lalitaalaalitah/medhA-keyboard_layout";
 
-# In system configuration:
+# In system packages:
 environment.systemPackages = [ inputs.medhA-keyboard.packages.aarch64-darwin.default ];
 ```
 
 ---
 
-## 2. Enabling the Keyboard in System Settings
+## 2. Activating the Keyboard in System Settings
 
-Once installed, enable the keyboard source in macOS:
-
-1. Open **System Settings** -> **Keyboard**.
-2. Under **Input Sources**, click **Edit...** (or **+**).
-3. Select **Sanskrit** or **English (US)**.
-4. Add **`medhA-macOSX-v7`**.
+1. Open **System Settings** (or **System Preferences** on macOS Monterey and earlier) -> **Keyboard** -> **Input Sources**.
+2. Click **+** (Add Input Source).
+3. Search for **`Sanskrit`** or **`English (US)`**.
+4. Select **`medhA-macOSX-v7`** (or `medhA`) and click **Add**.
+5. Switch between keyboard layouts using **`Control + Space`** or the Globe key.
 
 ![medhA 1.7 Installed in System Settings](/Volumes/Cablet_WD_2TB_20251206/05_Development/Github/24_Keyboards/01_medhA-keyboard_layout/docs/screenshots/medhA_macOS/medhA_1.7_Installed.png)
 
 ---
 
-## 3. Layout Maps & Keymaps
+## 3. Official Visual Layout Maps
 
-Below are the official visual layouts captured directly from macOS Keyboard Viewer for version 1.7.
+Here are the official keymap layer images captured directly from macOS Keyboard Viewer for version 1.7:
 
-### 3.1 Unshifted / Normal Layout State
-
-The default unshifted state places matras (vowel signs) and primary consonants in intuitive QWERTY-aligned positions.
+### 3.1 Normal / Unshifted State
+Default key placements for matras, primary consonants, anusvara, and visarga.
 
 ![medhA 1.7 Keyboard Viewer Normal](/Volumes/Cablet_WD_2TB_20251206/05_Development/Github/24_Keyboards/01_medhA-keyboard_layout/docs/screenshots/medhA_macOS/medhA_1.7_normal.png)
 
 ---
 
-### 3.2 Shifted Layout State
-
+### 3.2 Shift State
 Holding **`Shift`** accesses full vowels (अ, आ, इ, ई, उ, ऊ, ऋ, ॠ), aspirated consonants (ख, घ, छ, झ, ठ, ढ, थ, ध, फ, भ), and double danda (॥).
 
 ![medhA 1.7 Keyboard Viewer Shift](/Volumes/Cablet_WD_2TB_20251206/05_Development/Github/24_Keyboards/01_medhA-keyboard_layout/docs/screenshots/medhA_macOS/medhA_1.7_shift.png)
 
 ---
 
-### 3.3 CapsLock Layout State
-
-Turning on **`CapsLock`** locks the layout into uppercase / Shifted Devanagari mappings for extended typing sessions.
+### 3.3 Caps Lock State
+Turning on **`CapsLock`** locks the layout into uppercase / Shifted Devanagari mappings for continuous typing.
 
 ![medhA 1.7 Keyboard Viewer CapsLock](/Volumes/Cablet_WD_2TB_20251206/05_Development/Github/24_Keyboards/01_medhA-keyboard_layout/docs/screenshots/medhA_macOS/medhA_1.7_CapsLock.png)
 
 ---
 
-### 3.4 CapsLock + Shift Layout State
-
-Combining **`CapsLock + Shift`** reverts key mappings dynamically back to unshifted matra/consonant states.
+### 3.4 Caps Lock + Shift State
+Combining **`CapsLock + Shift`** dynamically inverts the state back to unshifted matras and consonants.
 
 ![medhA 1.7 Keyboard Viewer CapsLock Shift](/Volumes/Cablet_WD_2TB_20251206/05_Development/Github/24_Keyboards/01_medhA-keyboard_layout/docs/screenshots/medhA_macOS/medhA_1.7_CapsLock_Shift.png)
 
 ---
 
-## 4. Typing Conjuncts & Sanskrit Formatting
+## 4. Quick Typing Formatting Reference
 
-- **Virama / Halanta (्)**: Type `,` (comma) to join consonants into conjuncts (e.g., `k` + `,` + `t` -> `क्त`).
-- **Anusvara (ं)**: Type `.` (period).
-- **Visarga (ः)**: Type `/` (slash).
-- **Single Danda (।)**: Type `Shift + /`.
-- **Double Danda (॥)**: Type `Shift + .`.
+| Action | Key Combination | Output Result |
+| :--- | :--- | :--- |
+| **Virama / Halanta** | `,` (comma) | **्** (e.g. `k` + `,` + `t` -> **क्त**) |
+| **Anusvara** | `.` (period) | **ं** |
+| **Visarga** | `/` (slash) | **ः** |
+| **Single Danda** | `Shift + /` | **।** |
+| **Double Danda** | `Shift + .` | **॥** |
 
 ---
 
-## 5. Technical Note & Upcoming Version 8.0.0
+## 5. What's Next for Version 8.0.0
 
-During testing of macOS v1.7, it was noted that the **`Option (⌥)`** key layer is unmapped on macOS v1.7, while the Linux `sa` edition uses AltGr for Vedic accents (`U+0951`, `U+0952`, `U+1CDA`). 
-
-This mapping will be fully aligned in the upcoming **Version 8.0.0** release across macOS, Linux, and Windows!
+In current macOS v1.7, the **`Option (⌥)`** key layer is unmapped, whereas Linux `sa` uses AltGr for Vedic accents (`U+0951`, `U+0952`, `U+1CDA`). The upcoming **Version 8.0.0** release will align the `Option` key on macOS to output Vedic accents, achieving 100% parity across macOS, Linux, and Windows!
