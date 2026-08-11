@@ -1,0 +1,40 @@
+name: Release medhA Keyboard Layout
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Package Keyboard Layouts
+        run: |
+          python3 scripts/package_keyboards.py --platform all --outdir dist
+
+      - name: Create Release and Upload Assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/medhA-keyboard-macOS.zip
+            dist/medhA-keyboard-Linux.tar.gz
+            dist/medhA-keyboard-Windows.zip
+            dist/medhA-keyboard-All-Platforms.zip
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
