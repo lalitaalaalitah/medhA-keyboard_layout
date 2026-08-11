@@ -55,12 +55,11 @@ This document serves as the exhaustive audit of existing character mappings and 
 - **Linux (`sa`)**:
   - Leverages Level 3 AltGr modifier for Vedic Accents (`U+0951`, `U+0952`, `U+1CDA`, `U+1CF2`, `U+1CF5`, `U+1CF6`).
   - Includes Jihvamuliya (`U+1CF5` / `U+1CF4`) and Upadhmaniya (`U+1CF6`).
-- **macOS (`keylayout`)**:
-  - Maps Option key to Vedic Accents and special signs.
-  - Minor Unicode scalar discrepancies exist between macOS `keylayout` XML dead-keys and Linux XKB symbol definitions.
+- **macOS (`medhA-macOSX-v_1.7.bundle`)**:
+  - **Empirical Finding**: Option (`⌥`) and Shift+Option (`⇧⌥`) keys currently produce no output in macOS v1.7.
+  - **Action Required**: Map Option and Shift+Option layers in macOS `keylayout` XML to mirror Linux AltGr Vedic accents (`U+0951`, `U+0952`, `U+1CDA`, etc.) during the upcoming Version 8.0.0 alignment.
 - **Windows (`medha-6.exe`)**:
-  - Uses AltGr / Shift+AltGr layer.
-  - Requires verification to ensure all Vedic accents match Linux and macOS.
+  - Uses AltGr / Shift+AltGr layer for extended diacritics.
 
 ---
 
