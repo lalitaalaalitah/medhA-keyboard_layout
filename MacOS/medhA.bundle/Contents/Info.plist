@@ -5,21 +5,21 @@
 	<key>CFBundleGetInfoString</key>
 	<string>medhA Sanskrit Keyboard Layout v1.7 by lalitaalaalitah (https://www.lalitaalaalitah.com)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.lalitaalaalitah.keyboardlayout.medha-macosx</string>
+	<string>com.lalitaalaalitah.keyboardlayout.medha</string>
 	<key>CFBundleName</key>
-	<string>medhA-macOSX-v1.7</string>
+	<string>medhA</string>
 	<key>CFBundleVersion</key>
 	<string>1.7</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © lalitaalaalitah. https://www.lalitaalaalitah.com https://github.com/lalitaalaalitah</string>
-	<key>KLInfo_medhA-macOSX-v7</key>
+	<key>KLInfo_medhA</key>
 	<dict>
 		<key>TICapsLockLanguageSwitchCapable</key>
 		<true/>
 		<key>TISIconIsTemplate</key>
 		<false/>
 		<key>TISInputSourceID</key>
-		<string>com.lalitaalaalitah.keyboardlayout.medha-macosx.medha-macosx-v1.7</string>
+		<string>com.lalitaalaalitah.keyboardlayout.medha.medha</string>
 		<key>TISIntendedLanguage</key>
 		<string>sa-Deva</string>
 	</dict>
