@@ -105,7 +105,7 @@ def _build_single_mac_dmg(bundle_path: Path, ver_label: str, vol_name: str, out_
             print(f"{FG_GREEN}   [OK] Generated DMG ({ver_label}): {out_dmg}{CLR_RESET}")
     else:
         out_zip = out_dir / f"medhA-keyboard-macOS-{ver_label}.zip"
-        with zipfile.ZipFile(out_zip, "w", zipfile.ZIP_DEFLATED) as zf:
+        with zipfile.ZipFile(out_zip, "w", zipfile.ZIP_DEFLATED, strict_timestamps=False) as zf:
             for root, dirs, files in os.walk(dmg_stage):
                 for file in files:
                     file_path = Path(root) / file
@@ -120,8 +120,10 @@ def package_mac_dmgs(repo_root: Path, out_dir: Path):
     mac_dir = repo_root / "MacOS"
     print(f"{FG_TEXT}Packaging macOS editions into individual DMGs...{CLR_RESET}")
 
-    # Active Canonical medhA.bundle
-    bundle_17 = mac_dir / "medhA.bundle"
+    # Active Canonical medhA 1.7 bundle
+    bundle_17 = mac_dir / "medhA_1.7_working.bundle"
+    if not bundle_17.exists():
+        bundle_17 = mac_dir / "medhA.bundle"
     out_dmg_17 = out_dir / "medhA-keyboard-macOS-v1.7.dmg"
     _build_single_mac_dmg(bundle_17, "v1.7", "medhA Keyboard v1.7", out_dmg_17, out_dir)
 
@@ -162,7 +164,7 @@ def package_windows(repo_root: Path, out_dir: Path) -> Path:
     out_zip = out_dir / "medhA-keyboard-Windows.zip"
 
     print(f"{FG_TEXT}Packaging Windows edition -> {FG_YELLOW}{out_zip.name}{CLR_RESET}")
-    with zipfile.ZipFile(out_zip, "w", zipfile.ZIP_DEFLATED) as zf:
+    with zipfile.ZipFile(out_zip, "w", zipfile.ZIP_DEFLATED, strict_timestamps=False) as zf:
         for root, dirs, files in os.walk(win_dir):
             for file in files:
                 if file.startswith(".DS_Store"):
@@ -179,7 +181,7 @@ def package_all_combined(repo_root: Path, out_dir: Path) -> Path:
     out_zip = out_dir / "medhA-keyboard-All-Platforms.zip"
 
     print(f"{FG_TEXT}Packaging All-in-One archive -> {FG_YELLOW}{out_zip.name}{CLR_RESET}")
-    with zipfile.ZipFile(out_zip, "w", zipfile.ZIP_DEFLATED) as zf:
+    with zipfile.ZipFile(out_zip, "w", zipfile.ZIP_DEFLATED, strict_timestamps=False) as zf:
         for platform in ["MacOS", "Linux", "Windows"]:
             p_dir = repo_root / platform
             if not p_dir.exists():
