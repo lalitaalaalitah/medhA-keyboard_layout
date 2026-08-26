@@ -2,10 +2,10 @@
 
 [![Packaging Tool](https://img.shields.io/badge/packaging--tool-v1.0.0-blue.svg)](scripts/package_keyboards.py)
 [![Author](https://img.shields.io/badge/author-lalitaalaalitah-purple.svg)](https://www.lalitaalaalitah.com)
-[![Platform Support](https://img.shields.io/badge/platform-macOS_|_Linux_|_Windows_|_nix_|_nix--darwin-darkgreen.svg)](#supported-platforms)
+[![Platform Support](https://img.shields.io/badge/platform-macOS_|_Linux_|_Windows_|_nix_|_nix--darwin-darkgreen.svg)](#supported-platforms--installation)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-An intuitive, high-efficiency Sanskrit / Devanagari keyboard layout available for **macOS**, **Linux** (Debian, Ubuntu, Pop!_OS / System76, Arch Linux, Manjaro, Fedora, NixOS), and **Windows**.
+An intuitive, high-efficiency Sanskrit / Devanagari keyboard layout available for **macOS**, **Linux** (Debian, Ubuntu, Pop!_OS, Arch, Manjaro, Fedora, NixOS), and **Windows**.
 
 ---
 
@@ -18,117 +18,60 @@ An intuitive, high-efficiency Sanskrit / Devanagari keyboard layout available fo
 
 ---
 
-## Supported Platforms & Editions
+## Supported Platforms & Installation
 
-| Platform | Edition File / Package | Installation Method |
+For full, step-by-step installation instructions for every operating system and desktop environment, see **[HOW_TO_USE.md](HOW_TO_USE.md)**.
+
+| Platform | Quick Command / Package | Full Guide |
 | :--- | :--- | :--- |
-| **macOS** | `medhA.bundle` | Bundle copy, Homebrew Cask, or Nix Flake |
-| **Linux** | `sa` (XKB Symbols) | Automated `install.sh` (GNOME/KDE/X11/Wayland/NixOS) |
-| **Windows** | `medha-6.exe` | Executable setup installer |
+| **macOS (Homebrew)** | `brew tap lalitaalaalitah/tap && brew install --cask medha-keyboard` | [macOS Setup](HOW_TO_USE.md#macos) |
+| **macOS (DMG / Bundle)** | `medhA-keyboard-macOS.dmg` / `medhA.bundle` | [DMG Setup](HOW_TO_USE.md#option-b-dmg--disk-image-installation) |
+| **macOS (Nix-Darwin)** | `inputs.medhA-keyboard.url` Flake module | [Nix-Darwin Setup](HOW_TO_USE.md#option-d-nix-flake-nix-darwin) |
+| **Linux (Installer)** | `tar -xvf medhA-keyboard-Linux.tar.gz && sudo ./install.sh` | [Linux Setup](HOW_TO_USE.md#linux-debian-ubuntu-pop_os-arch-manjaro-fedora-nixos) |
+| **Linux (NixOS)** | `services.xserver.xkb.extraLayouts.medhA` | [NixOS Setup](HOW_TO_USE.md#nixos-configuration) |
+| **Windows (10 / 11)** | `medhA-keyboard-Windows.zip` (`medha-6.exe`) | [Windows Setup](HOW_TO_USE.md#windows-10--11) |
 
 ---
 
-## Quick Setup
+## Quick Command Summary
 
-For complete, step-by-step installation instructions for macOS, Linux, and Windows, see [HOW_TO_USE.md](HOW_TO_USE.md).
-
-### Linux Automated Installer
-```bash
-tar -xvf medhA-keyboard-Linux.tar.gz
-cd Linux
-sudo ./install.sh
-```
-
-### macOS Installation
-
-**Option A: Via Homebrew Cask (Recommended)**
+### macOS (Homebrew Cask)
 ```bash
 brew tap lalitaalaalitah/tap
 brew install --cask medha-keyboard
 ```
 
-**Option B: Manual Bundle Copy**
-Download `medhA-keyboard-macOS.zip` and move `medhA.bundle` to `/Library/Keyboard Layouts/`.
-
-### Nix Flake Installation
-```nix
-# In your flake.nix inputs:
-inputs.medhA-keyboard.url = "github:lalitaalaalitah/medhA-keyboard_layout";
-
-# NixOS module:
-imports = [ inputs.medhA-keyboard.nixosModules.default ];
+### Linux (Automated Script)
+```bash
+tar -xvf medhA-keyboard-Linux.tar.gz
+cd Linux && sudo ./install.sh
 ```
 
-Now create a custom medhA_keyboard.nix file with below content:
-```nix
-{
-  pkgs,
-  lib,
-  medhA-keyboard,
-  ...
-}:
-
-let
-  medhAPkg = medhA-keyboard.packages.${pkgs.stdenv.hostPlatform.system}.default;
-in
-{
-  environment.systemPackages = [ medhAPkg ];
-
-  # Install medhA Sanskrit keyboard layout bundle system-wide to /Library/Keyboard Layouts/medhA.bundle
-  system.activationScripts.postActivation.text = lib.mkAfter ''
-    echo "Installing medhA keyboard layout bundle system-wide to /Library/Keyboard Layouts..."
-    mkdir -p "/Library/Keyboard Layouts"
-    rm -rf "$HOME/Library/Keyboard Layouts/medhA.bundle" "$HOME/Library/Keyboard Layouts/medhA_keyboard.bundle" || true
-    rm -rf "/Library/Keyboard Layouts/medhA.bundle" "/Library/Keyboard Layouts/medhA_keyboard.bundle" || true
-    cp -R "${medhAPkg}/Library/Keyboard Layouts/medhA.bundle" "/Library/Keyboard Layouts/medhA.bundle"
-    chmod -R 755 "/Library/Keyboard Layouts/medhA.bundle"
-    chown -R root:wheel "/Library/Keyboard Layouts/medhA.bundle" || true
-    /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -R -f "/Library/Keyboard Layouts/medhA.bundle" || true
-    /usr/bin/touch "/Library/Keyboard Layouts"
-  '';
-}
+### Windows (Setup Installer)
+```powershell
+Expand-Archive -Path medhA-keyboard-Windows.zip -DestinationPath .
+.\medha-6.exe
 ```
 
-Now, import the created medhA_keyboard.nix file in your system configuration in modules list, like this:
-
-```nix
-darwinConfigurations = {
-    "${hostname}" = nix-darwin.lib.darwinSystem {
-        inherit system specialArgs;
-
-        modules = [
-        { nixpkgs.hostPlatform = system; }
-
-        # home-manager and homebrew modules.
-        ./modules/darwin
-        ];
-    };
-}
-```
 
 ---
 
-## Packaging Utility
+## Packaging Releases
 
-To build release archives for all platforms locally:
+Build release archives locally across all platforms:
 
 ```bash
 python3 scripts/package_keyboards.py --app-version 1.7.5 --platform all
 ```
 
-Outputs archives into `dist/`:
-- `medhA-keyboard-macOS-v1.7.5.dmg` (and `medhA-keyboard-macOS.dmg`)
-- `medhA-keyboard-Linux-v1.7.5.tar.gz` (and `medhA-keyboard-Linux.tar.gz`)
-- `medhA-keyboard-Windows-v1.7.5.zip` (and `medhA-keyboard-Windows.zip`)
-- `medhA-keyboard-All-Platforms-v1.7.5.zip` (and `medhA-keyboard-All-Platforms.zip`)
-
 ---
 
-## Documentation & Future Roadmap
+## Repository Documentation Index
 
 - **[HOW_TO_USE.md](HOW_TO_USE.md)**: Exhaustive multi-distro and multi-OS installation guide.
 - **[RELEASE_STANDARDS.md](RELEASE_STANDARDS.md)**: Release versioning standards, tag naming, and Homebrew Tap update procedure.
 - **[docs/UNINSTALLATION_GUIDE.md](docs/UNINSTALLATION_GUIDE.md)**: Uninstallation & legacy version cleanup guide.
 - **[docs/DOCUMENTATION_PLAN.md](docs/DOCUMENTATION_PLAN.md)**: Blog post roadmap & screenshot inventory for `code.lalitaalaalitah.com`.
 - **[docs/HOMEBREW_RELEASE_PLAN.md](docs/HOMEBREW_RELEASE_PLAN.md)**: Homebrew Cask distribution plan.
-- **[docs/LAYOUT_PARITY_AND_ENHANCEMENT_ANALYSIS.md](docs/LAYOUT_PARITY_AND_ENHANCEMENT_ANALYSIS.md)**: [TODO] Layout parity & character mapping enhancement analysis.
+- **[docs/LAYOUT_PARITY_AND_ENHANCEMENT_ANALYSIS.md](docs/LAYOUT_PARITY_AND_ENHANCEMENT_ANALYSIS.md)**: Layout parity & character mapping enhancement analysis.
+
