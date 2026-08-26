@@ -21,8 +21,8 @@ pkgs.stdenv.mkDerivation {
     mkdir -p $out/Library/Keyboard\ Layouts
     if [ -d MacOS/medhA_1.7_working.bundle ]; then
       cp -r MacOS/medhA_1.7_working.bundle $out/Library/Keyboard\ Layouts/
-    elif [ -d MacOS/medhA.bundle ]; then
-      cp -r MacOS/medhA.bundle $out/Library/Keyboard\ Layouts/
+    # elif [ -d MacOS/medhA.bundle ]; then
+    #   cp -r MacOS/medhA.bundle $out/Library/Keyboard\ Layouts/
     fi
 
     runHook postInstall
