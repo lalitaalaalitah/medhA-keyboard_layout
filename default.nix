@@ -19,10 +19,10 @@ pkgs.stdenv.mkDerivation {
 
     # Install macOS bundle if on darwin / for darwin consumers
     mkdir -p $out/Library/Keyboard\ Layouts
-    if [ -d MacOS/medhA.bundle ]; then
-      cp -r MacOS/medhA.bundle $out/Library/Keyboard\ Layouts/
-    # elif [ -d MacOS/medhA-macOSX-v_1.7.bundle ]; then
-    #   cp -r MacOS/medhA-macOSX-v_1.7.bundle $out/Library/Keyboard\ Layouts/
+    # if [ -d MacOS/medhA.bundle ]; then
+    #   cp -r MacOS/medhA.bundle $out/Library/Keyboard\ Layouts/
+    elif [ -d MacOS/medhA_1.7_working.bundle ]; then
+      cp -r MacOS/medhA_1.7_working.bundle $out/Library/Keyboard\ Layouts/
     fi
 
     runHook postInstall
