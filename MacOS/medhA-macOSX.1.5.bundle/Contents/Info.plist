@@ -3,19 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIdentifier</key>
-	<string>com.lalitaalaalitah.keyboardlayout.medha</string>
+	<string>com.apple.keyboardlayout.medha-macosx.1.5</string>
 	<key>CFBundleName</key>
-	<string>medha keyboard</string>
+	<string>medhA-macOSX.1.5</string>
 	<key>CFBundleVersion</key>
-	<string>1.6</string>
-	<key>KLInfo_medhA-macOSX.1.6</key>
+	<string>1.5</string>
+	<key>KLInfo_medhA-macOSX.1.5</key>
 	<dict>
-		<key>TICapsLockLanguageSwitchCapable</key>
-		<true/>
 		<key>TISInputSourceID</key>
-		<string>com.lalitaalaalitah.keyboardlayout.medha</string>
+		<string>com.apple.keyboardlayout.medha-macosx.1.5.medha-macosx.1.5</string>
 		<key>TISIntendedLanguage</key>
-		<string>sa-Deva-IN</string>
+		<string>sa-Deva-IN-vaidika</string>
 	</dict>
 </dict>
 </plist>
