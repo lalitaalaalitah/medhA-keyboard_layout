@@ -1,4 +1,6 @@
-{ pkgs ? import <nixpkgs> {} }:
+{
+  pkgs ? import <nixpkgs> { },
+}:
 
 pkgs.stdenv.mkDerivation {
   pname = "medha-keyboard-layout";
@@ -19,8 +21,8 @@ pkgs.stdenv.mkDerivation {
     mkdir -p $out/Library/Keyboard\ Layouts
     if [ -d MacOS/medhA.bundle ]; then
       cp -r MacOS/medhA.bundle $out/Library/Keyboard\ Layouts/
-    elif [ -d MacOS/medhA-macOSX-v_1.7.bundle ]; then
-      cp -r MacOS/medhA-macOSX-v_1.7.bundle $out/Library/Keyboard\ Layouts/
+    # elif [ -d MacOS/medhA-macOSX-v_1.7.bundle ]; then
+    #   cp -r MacOS/medhA-macOSX-v_1.7.bundle $out/Library/Keyboard\ Layouts/
     fi
 
     runHook postInstall
