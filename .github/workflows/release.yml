@@ -23,20 +23,21 @@ jobs:
 
       - name: Package Keyboard Layouts (DMGs for macOS, TAR for Linux, ZIP for Windows)
         run: |
-          python3 scripts/package_keyboards.py --platform all --outdir dist
+          TAG_NAME="${GITHUB_REF_NAME}"
+          VERSION="${TAG_NAME#v}"
+          echo "Building for version: ${VERSION}"
+          python3 scripts/package_keyboards.py --platform all --app-version "${VERSION}" --outdir dist
 
       - name: Create Release and Upload Assets
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            dist/medhA-keyboard-macOS-v1.7.dmg
-            dist/medhA-keyboard-macOS-v1.6.dmg
-            dist/medhA-keyboard-macOS.dmg
-            dist/medhA-keyboard-Linux.tar.gz
-            dist/medhA-keyboard-Windows.zip
-            dist/medhA-keyboard-All-Platforms.zip
+            dist/*.dmg
+            dist/*.tar.gz
+            dist/*.zip
           draft: false
           prerelease: false
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
