@@ -1,6 +1,6 @@
 cask "medha-keyboard" do
   version "1.7.5"
-  sha256 "625f53889478135166662b892063d38e18a55434f7022bf707542bc674a946c3"
+  sha256 "6d101a9c78d0b77154bd3032632a9aa014057c9cae294eae79cef3468780e1ff"
 
   url "https://github.com/lalitaalaalitah/medhA-keyboard_layout/releases/download/v#{version}/medhA-keyboard-macOS-v#{version}.dmg"
   name "medhA Keyboard Layout"
@@ -11,4 +11,5 @@ cask "medha-keyboard" do
 
   zap trash: "~/Library/Preferences/com.apple.HIToolbox.plist"
 end
+
 
