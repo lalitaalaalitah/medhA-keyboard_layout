@@ -126,13 +126,13 @@ def package_mac_dmgs(repo_root: Path, out_dir: Path, app_version: str):
     # Active Canonical medhA bundle (unversioned for clean in-place updates)
     bundle_curr = mac_dir / "medhA.bundle"
     if not bundle_curr.exists():
-        bundle_curr = mac_dir / "medhA_1.7_working.bundle"
+        bundle_curr = mac_dir / "archive" / "medhA_1.7_working.bundle"
 
     out_dmg_versioned = out_dir / f"medhA-keyboard-macOS-{ver_label}.dmg"
     _build_single_mac_dmg(bundle_curr, ver_label, f"medhA Keyboard {ver_label}", out_dmg_versioned, out_dir)
 
     # Legacy DMG aliases for reference
-    bundle_16 = mac_dir / "medhA_1.6_working.bundle"
+    bundle_16 = mac_dir / "archive" / "medhA_1.6_working.bundle"
     if bundle_16.exists():
         out_dmg_16 = out_dir / "medhA-keyboard-macOS-v1.6.dmg"
         _build_single_mac_dmg(bundle_16, "v1.6", "medhA Keyboard v1.6", out_dmg_16, out_dir)
