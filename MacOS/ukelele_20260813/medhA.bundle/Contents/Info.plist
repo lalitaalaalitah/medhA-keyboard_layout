@@ -3,19 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>sa</string>
+	<string>en</string>
 	<key>CFBundleGetInfoString</key>
 	<string>medhA Sanskrit Keyboard Layout v1.7 by lalitaalaalitah (https://www.lalitaalaalitah.com)</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.lalitaalaalitah.keyboardlayout.medha</string>
 	<key>CFBundleName</key>
 	<string>medhA</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.7</string>
 	<key>CFBundleVersion</key>
 	<string>1.7</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © lalitaalaalitah. https://www.lalitaalaalitah.com. https://github.com/lalitaalaalitah</string>
+	<string>Copyright © lalitaalaalitah. https://www.lalitaalaalitah.com https://github.com/lalitaalaalitah</string>
 	<key>KLInfo_medhA</key>
 	<dict>
 		<key>TICapsLockLanguageSwitchCapable</key>
@@ -25,7 +27,8 @@
 		<key>TISInputSourceID</key>
 		<string>com.lalitaalaalitah.keyboardlayout.medha.medha</string>
 		<key>TISIntendedLanguage</key>
-		<string>sa-Deva-IN</string>
+		<string>sa</string>
 	</dict>
 </dict>
 </plist>
+\textbf{}

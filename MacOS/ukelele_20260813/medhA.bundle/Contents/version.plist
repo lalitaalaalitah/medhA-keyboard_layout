@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildVersion</key>
+	<string>1.7</string>
+	<key>ProjectName</key>
+	<string>medhA</string>
+	<key>SourceVersion</key>
+	<string>1.7</string>
+	<key>Author</key>
+	<string>lalitaalaalitah</string>
+	<key>Website</key>
+	<string>https://www.lalitaalaalitah.com</string>
+	<key>GitHub</key>
+	<string>https://github.com/lalitaalaalitah</string>
+</dict>
+</plist>
