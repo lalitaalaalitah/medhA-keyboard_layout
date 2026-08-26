@@ -5,15 +5,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>sa</string>
 	<key>CFBundleGetInfoString</key>
-	<string>medhA Sanskrit Keyboard Layout v1.7 by lalitaalaalitah (https://www.lalitaalaalitah.com)</string>
+	<string>medhA Sanskrit Keyboard Layout v1.7.5 by lalitaalaalitah (https://www.lalitaalaalitah.com)</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.lalitaalaalitah.keyboardlayout.medha</string>
 	<key>CFBundleName</key>
 	<string>medhA</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.7</string>
+	<string>1.7.5</string>
 	<key>CFBundleVersion</key>
-	<string>1.7</string>
+	<string>1.7.5</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © lalitaalaalitah. https://www.lalitaalaalitah.com. https://github.com/lalitaalaalitah</string>
 	<key>KLInfo_medhA</key>

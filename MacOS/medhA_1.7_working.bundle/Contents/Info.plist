@@ -7,7 +7,7 @@
 	<key>CFBundleName</key>
 	<string>medha keyboard</string>
 	<key>CFBundleVersion</key>
-	<string>1.7</string>
+	<string>1.7.5</string>
 	<key>KLInfo_medhA-macOSX.1.7</key>
 	<dict>
 		<key>TICapsLockLanguageSwitchCapable</key>
