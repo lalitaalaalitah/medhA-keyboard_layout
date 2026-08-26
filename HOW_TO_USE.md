@@ -4,6 +4,8 @@
 **Website**: [https://www.lalitaalaalitah.com](https://www.lalitaalaalitah.com)  
 **GitHub**: [https://github.com/lalitaalaalitah/medhA-keyboard_layout](https://github.com/lalitaalaalitah/medhA-keyboard_layout)  
 
+[← Back to Main README Overview](README.md) | [Quick Command Summary](README.md#quick-command-summary) | [Supported Platforms](README.md#supported-platforms--installation)
+
 ---
 
 ## Important Note for Upgrading Users
@@ -20,6 +22,8 @@
 ### macOS
 
 #### Option A: Homebrew Cask (Recommended)
+For a 1-line installation summary, see [README.md#quick-command-summary](README.md#quick-command-summary).
+
 ```bash
 brew tap lalitaalaalitah/tap
 brew install --cask medha-keyboard
@@ -134,7 +138,7 @@ services.xserver.xkb.extraLayouts.medhA = {
 
 ## 2. Packaging Releases Locally
 
-To package all platform release archives locally into `dist/`:
+To package all platform release archives locally into `dist/` (see [README.md#packaging-releases](README.md#packaging-releases)):
 
 ```bash
 python3 scripts/package_keyboards.py --app-version 1.7.5 --platform all
@@ -146,9 +150,22 @@ Generated outputs in `dist/`:
 - `medhA-keyboard-Windows-v1.7.5.zip` (and `medhA-keyboard-Windows.zip`)
 - `medhA-keyboard-All-Platforms-v1.7.5.zip` (and `medhA-keyboard-All-Platforms.zip`)
 
+For release versioning rules and release workflow, refer to **[RELEASE_STANDARDS.md](RELEASE_STANDARDS.md)**.
+
 ---
 
 ## 3. Uninstallation & Legacy Cleanup
 
 For complete platform-specific uninstallation instructions, see **[UNINSTALLATION_GUIDE.md](docs/UNINSTALLATION_GUIDE.md)**.
+
+---
+
+## Navigation Links
+
+- 🏠 **[Main Overview & Landing Page](README.md)**
+- ⚡ **[Quick Command Summary](README.md#quick-command-summary)**
+- 📋 **[Release Standards & Tap Workflow](RELEASE_STANDARDS.md)**
+- 🗑️ **[Uninstallation Guide](docs/UNINSTALLATION_GUIDE.md)**
+- 🗺️ **[Documentation Plan](docs/DOCUMENTATION_PLAN.md)**
+
 
