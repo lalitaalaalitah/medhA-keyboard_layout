@@ -71,14 +71,15 @@ brew install --cask medha-keyboard
 To package all platform release archives locally into `dist/`:
 
 ```bash
-python3 scripts/package_keyboards.py --platform all
+python3 scripts/package_keyboards.py --app-version 1.7.5 --platform all
 ```
 
 Outputs archives into `dist/`:
-- `medhA-keyboard-macOS.dmg`
-- `medhA-keyboard-Linux.tar.gz`
-- `medhA-keyboard-Windows.zip`
-- `medhA-keyboard-All-Platforms.zip`
+- `medhA-keyboard-macOS-v1.7.5.dmg`
+- `medhA-keyboard-Linux-v1.7.5.tar.gz`
+- `medhA-keyboard-Windows-v1.7.5.zip`
+- `medhA-keyboard-All-Platforms-v1.7.5.zip`
+
 
 ---
 

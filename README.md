@@ -66,21 +66,23 @@ imports = [ inputs.medhA-keyboard.nixosModules.default ];
 To build release archives for all platforms locally:
 
 ```bash
-python3 scripts/package_keyboards.py --platform all
+python3 scripts/package_keyboards.py --app-version 1.7.5 --platform all
 ```
 
 Outputs archives into `dist/`:
-- `medhA-keyboard-macOS.zip`
-- `medhA-keyboard-Linux.tar.gz`
-- `medhA-keyboard-Windows.zip`
-- `medhA-keyboard-All-Platforms.zip`
+- `medhA-keyboard-macOS-v1.7.5.dmg` (and `medhA-keyboard-macOS.dmg`)
+- `medhA-keyboard-Linux-v1.7.5.tar.gz` (and `medhA-keyboard-Linux.tar.gz`)
+- `medhA-keyboard-Windows-v1.7.5.zip` (and `medhA-keyboard-Windows.zip`)
+- `medhA-keyboard-All-Platforms-v1.7.5.zip` (and `medhA-keyboard-All-Platforms.zip`)
 
 ---
 
 ## Documentation & Future Roadmap
 
 - **[HOW_TO_USE.md](HOW_TO_USE.md)**: Exhaustive multi-distro and multi-OS installation guide.
+- **[RELEASE_STANDARDS.md](RELEASE_STANDARDS.md)**: Release versioning standards, tag naming, and Homebrew Tap update procedure.
 - **[docs/UNINSTALLATION_GUIDE.md](docs/UNINSTALLATION_GUIDE.md)**: Uninstallation & legacy version cleanup guide.
 - **[docs/DOCUMENTATION_PLAN.md](docs/DOCUMENTATION_PLAN.md)**: Blog post roadmap & screenshot inventory for `code.lalitaalaalitah.com`.
 - **[docs/HOMEBREW_RELEASE_PLAN.md](docs/HOMEBREW_RELEASE_PLAN.md)**: Homebrew Cask distribution plan.
 - **[docs/LAYOUT_PARITY_AND_ENHANCEMENT_ANALYSIS.md](docs/LAYOUT_PARITY_AND_ENHANCEMENT_ANALYSIS.md)**: [TODO] Layout parity & character mapping enhancement analysis.
+
