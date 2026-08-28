@@ -2,7 +2,9 @@
 
 **Author**: `lalitaalaalitah`  
 **Website**: [https://www.lalitaalaalitah.com](https://www.lalitaalaalitah.com)  
-**Original Article**: [https://code.lalitaalaalitah.com/medha-6-unicode-sanskrit-keyboard-layou/](https://code.lalitaalaalitah.com/medha-6-unicode-sanskrit-keyboard-layou/)  
+**Original Articles**:  
+- [medhA - Unicode Sanskrit Keyboard Layout for Windows](https://code.lalitaalaalitah.com/medha-6-unicode-sanskrit-keyboard-layou/)  
+- [medhA 3 in Single Bundle](https://code.lalitaalaalitah.com/medha-3-in-single-bundle/)  
 **Published on**: [code.lalitaalaalitah.com](https://code.lalitaalaalitah.com)  
 **GitHub Repository**: [https://github.com/lalitaalaalitah/medhA-keyboard_layout](https://github.com/lalitaalaalitah/medhA-keyboard_layout)  
 
@@ -12,13 +14,21 @@
 
 ## 1. What is medhA for Windows & What is Its Purpose?
 
-**`medhA`** is a lightweight, high-efficiency keyboard layout program for Microsoft Windows that maps [Devanagari](https://en.wikipedia.org/wiki/Devanagari) script characters to your conventional English QWERTY keyboard. It enables scholars, researchers, developers, and students to write [Sanskrit](https://en.wikipedia.org/wiki/Sanskrit), Hindi, Marathi, Nepali, and other Devanagari-script languages naturally and rapidly.
+**`medhA`** is a lightweight, high-efficiency keyboard layout program for Microsoft Windows that maps [Devanagari](https://en.wikipedia.org/wiki/Devanagari) script characters to your conventional English QWERTY keyboard. It enables scholars, researchers, developers, and students to write [Sanskrit](https://en.wikipedia.org/wiki/Sanskrit), Hindi, Marathi, Nepali, Newari, Maithili, Bhojpuri, Konkani, and other Devanagari-script languages naturally and rapidly.
 
 Unlike cumbersome traditional typewriter layouts (such as InScript), `medhA` integrates seamlessly into Windows as a native input method without requiring third-party background software or resident applications.
 
 ---
 
-## 2. Development History & Sound-Based Design Scheme
+## 2. Supported Languages & Regional Scripts
+
+`medhA` supports full Devanagari typography for:
+- **Primary Languages**: Sanskrit (Classical & Vedic), Hindi, Marathi, Nepali.
+- **Regional & Historical Languages**: Newari, Maithili, Bhojpuri, Konkani, Marwari, Magahi, Gujari, Pahari (Garhwali & Kumaoni), Bhili, Santhali, Tharu, Sindhi, Sherpa, Kashmiri, and historical Devanagari-written Gujarati.
+
+---
+
+## 3. Development History & Sound-Based Design Scheme
 
 `medhA` for Windows was originally developed using **MSKLC** ([Microsoft Keyboard Layout Creator](https://msdn.microsoft.com/en-us/goglobal/bb964665)). 
 
@@ -36,26 +46,50 @@ Sanskrit has the advantage of not distinguishing between uppercase and lowercase
 
 ---
 
-## 3. Advantages of the Sound-Based Scheme
+## 4. Evolution of medhA 3 & Special Typographic Controls
 
-When typing Devanagari on a standard English keyboard, the primary challenge is that Devanagari letters are not printed on physical keycaps. Without a clear mapping philosophy, users are forced to memorize arbitrary key positions or rely on physical keyboard stickers.
+While older versions of `medhA` handled basic consonants and matras, **`medhA 3`** introduced critical special control combinations for advanced Devanagari typography and Vedic texts:
 
-Mapping by sound eliminates this cognitive barrier:
-* Anyone who reads Sanskrit/Hindi and English is already familiar with the phonetic sounds of both alphabets.
-* Once you understand the phonetic logic of `medhA`, remembering key positions becomes second nature without needing physical stickers or on-screen key lookup tables.
+### Key Combinations Introduced in medhA 3:
+* **`Ctrl + Shift + 1`**: Zero-Width Joiner (**ZWJ**)
+* **`Ctrl + Shift + 2`**: Zero-Width Non-Joiner (**ZWNJ**)
+* **`Ctrl + Shift + 3`**: Vedic Udatta (**॑** - `U+0951`)
+* **`Ctrl + Shift + 4`**: Vedic Anudatta (**॒** - `U+0952`)
+* **`Ctrl + Shift + 5`**: Vedic Swarita / Triple Udatta (**᳚** - `U+1CDA` / `U+0951`)
 
 ---
 
-## 4. Software Format Evolution & Download Details
+## 5. Typographic Formatting & Linguistic Rationale
 
-* **Historical Note**: Early versions of `medhA` were compressed in `.iso` format and hosted on Google Groups (requiring ISO extraction tools like WinRAR, 7-Zip, or PowerISO).
+### 5.1 Zero-Width Joiner (ZWJ - `Ctrl + Shift + 1`)
+Used to write half-consonants without allowing them to merge into complex ligatures:
+- **Half-Letter Typing**: `k` + `,` + `Ctrl+Shift+1` + `t` = **क्‌त**
+- **Special Use (Marathi & Newari Half-Ra)**: Used to compose the distinctive Marathi and Newari half-Ra (**र्‌क**):
+  - Typing `r` + `,` (Virama) + `Ctrl+Shift+1` (ZWJ) + `k` = **र्‌क**
+
+### 5.2 Zero-Width Non-Joiner (ZWNJ - `Ctrl + Shift + 2`)
+Used to render consonants with an explicit, visible Virama/Halanta symbol (**क्‌त**):
+- **Explicit Virama Typing**: `k` + `,` + `Ctrl+Shift+2` + `t` = **क्‌त**
+
+### 5.3 Default Conjunct Ligatures
+Without ZWJ or ZWNJ, typing consonants separated by Virama produces standard merged ligatures:
+- **Standard Ligature**: `k` + `,` + `t` = **क्त**
+
+### Why Use ZWJ & ZWNJ?
+Many Unicode fonts (such as *Sanskrit2003*) include hundreds of complex historical ligatures. Some of these ligatures are rare, intricate, and difficult for modern readers to parse. Using ZWJ or ZWNJ allows readers and publishers to display clean, simple, un-entangled consonant combinations where every letter remains clear and legible.
+
+---
+
+## 6. Software Format Evolution & Download Details
+
+* **Historical Note**: Early versions of `medhA` were compressed in `.iso` format and hosted on Google Groups (requiring extraction tools like WinRAR, 7-Zip, or PowerISO).
 * **Modern Executable Format**: Modern releases are compiled into a direct, single-click Windows executable installer package (**`medha-6.exe`** / **`setup.exe`** inside `medhA-keyboard-Windows.zip`).
 
 > 📥 **Latest Version Download**: Download `medhA-keyboard-Windows.zip` directly from **[GitHub Releases](https://github.com/lalitaalaalitah/medhA-keyboard_layout/releases)** or **[code.lalitaalaalitah.com](https://code.lalitaalaalitah.com/medha-6-unicode-sanskrit-keyboard-layou/)**.
 
 ---
 
-## 5. System Requirements & Windows Compatibility
+## 7. System Requirements & Windows Compatibility
 
 `medhA` is compatible across all modern and legacy versions of Microsoft Windows (32-bit, 64-bit, and ARM64 architecture):
 - **Modern Windows**: Windows 11, Windows 10
@@ -63,7 +97,7 @@ Mapping by sound eliminates this cognitive barrier:
 
 ---
 
-## 6. Step-by-Step Installation & Setup
+## 8. Step-by-Step Installation & Setup
 
 ### Modern Windows (Windows 10 & 11)
 
@@ -105,7 +139,7 @@ Mapping by sound eliminates this cognitive barrier:
 
 ---
 
-## 7. Recommended Unicode Fonts
+## 9. Recommended Unicode Fonts
 
 To ensure crisp rendering of complex Devanagari conjuncts, ligatures, and Vedic accents in Windows applications (Word, Notepad, TeX), install high-quality Devanagari Unicode typefaces such as:
 - **Sanskrit2003** ([sanskritweb.net](http://www.sanskritweb.net/itrans/sans2003.zip))
@@ -114,21 +148,24 @@ To ensure crisp rendering of complex Devanagari conjuncts, ligatures, and Vedic 
 
 ---
 
-## 8. Typing Formatting Reference
+## 10. Complete Typing Reference Table
 
-| Action | Key Combination | Devanagari Output |
+| Action / Character | Key Combination | Devanagari Output |
 | :--- | :--- | :--- |
 | **Virama / Halanta** | `,` (comma) | **्** (e.g. `k` + `,` + `t` -> **क्त**) |
 | **Anusvara** | `.` (period) | **ं** |
 | **Visarga** | `/` (slash) | **ः** |
 | **Single Danda** | `Shift + /` | **।** |
 | **Double Danda** | `Shift + .` | **॥** |
-| **Zero-Width Joiner (ZWJ)** | `Ctrl + Shift + 1` | **र्‌क** (Marathi half-Ra) |
+| **Zero-Width Joiner (ZWJ)** | `Ctrl + Shift + 1` | Half-consonant / **र्‌क** (Marathi half-Ra) |
 | **Zero-Width Non-Joiner (ZWNJ)** | `Ctrl + Shift + 2` | **क्‌त** (Explicit Virama form) |
+| **Vedic Udatta** | `Ctrl + Shift + 3` | **॑** (`U+0951`) |
+| **Vedic Anudatta** | `Ctrl + Shift + 4` | **॒** (`U+0952`) |
+| **Vedic Swarita** | `Ctrl + Shift + 5` | **᳚** (`U+1CDA`) |
 
 ---
 
-## 9. Uninstallation & Re-installation
+## 11. Uninstallation & Re-installation
 
 To remove `medhA` from Windows:
 1. Open **Settings** -> **Apps** -> **Installed Apps** (or Control Panel -> Programs and Features).

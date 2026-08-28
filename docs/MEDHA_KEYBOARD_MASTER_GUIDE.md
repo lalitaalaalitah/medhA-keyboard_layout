@@ -57,7 +57,7 @@ Traditional layout systems (like InScript) rearrange keys based on typewriter ge
 | :--- | :--- | :--- |
 | **v1.7.5** | August 2026 | Added automated Homebrew Cask sync, Nix Flake support (`nix-darwin` & NixOS), unified cross-platform release packager (`package_keyboards.py`), and enhanced Vedic svara mappings. |
 | **v1.7.0** | Early 2026 | Introduced updated macOS `.bundle` structure, standalone DMG installer, clean Linux XKB `sa` symbol integration, and Windows setup executables. |
-| **v1.5.0** | 2025 | Added support for ZWJ (Zero-Width Joiner) for Marathi half-Ra (**र्‌क**) and ZWNJ (Zero-Width Non-Joiner) for explicit Virama displays (**क्‌त**). |
+| **medhA 3** | Historical | Introduced special formatting shortcuts (`Ctrl+Shift+1` ZWJ, `Ctrl+Shift+2` ZWNJ, `Ctrl+Shift+3..5` Vedic Svaras), Marathi half-Ra (**र्‌क**), and explicit Virama control. |
 | **v1.0.0** | Initial Release | Core phonetic layout definition for macOS, Linux, and Windows. |
 
 > 📌 **Full Release Announcements**: Detailed historical release posts and changelogs are published on **[code.lalitaalaalitah.com](https://code.lalitaalaalitah.com)** and tagged on **[GitHub Releases](https://github.com/lalitaalaalitah/medhA-keyboard_layout/releases)**.
@@ -173,19 +173,19 @@ To form conjunct consonants, type the first consonant, followed by Virama (`,`),
 
 ### 4.5 Precision Controls: ZWJ & ZWNJ
 
-* **Zero-Width Joiner (ZWJ)**: Prevents complex ligature formation and forces half-consonant appearance. Used for Marathi half-Ra:
-  * `r` + `,` + `ZWJ` + `k` = **र्‌क**
-* **Zero-Width Non-Joiner (ZWNJ)**: Forces explicit Virama visibility:
-  * `k` + `,` + `ZWNJ` + `t` = **क्‌त**
+* **Zero-Width Joiner (ZWJ - `Ctrl + Shift + 1`)**: Prevents complex ligature formation and forces half-consonant appearance. Used for Marathi/Newari half-Ra:
+  * `r` + `,` + `Ctrl+Shift+1` (ZWJ) + `k` = **र्‌क**
+* **Zero-Width Non-Joiner (ZWNJ - `Ctrl + Shift + 2`)**: Forces explicit Virama visibility:
+  * `k` + `,` + `Ctrl+Shift+2` (ZWNJ) + `t` = **क्‌त**
 
 ---
 
 ### 4.6 Vedic Accents (Svaras)
 
 `medhA` includes native support for Vedic text composition:
-* **Udatta (॑)**: `U+0951` (Devanagari Stress Sign Datta)
-* **Anudatta (॒)**: `U+0952` (Devanagari Stress Sign Anudatta)
-* **Swarita / Triple Udatta (᳚)**: `U+1CDA` / `U+0951`
+* **Udatta (॑)**: `U+0951` (`Ctrl + Shift + 3` / Devanagari Stress Sign Datta)
+* **Anudatta (॒)**: `U+0952` (`Ctrl + Shift + 4` / Devanagari Stress Sign Anudatta)
+* **Swarita / Triple Udatta (᳚)**: `U+1CDA` / `U+0951` (`Ctrl + Shift + 5`)
 
 ---
 
