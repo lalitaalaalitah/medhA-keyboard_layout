@@ -171,10 +171,11 @@ Unicode fonts (such as *Sanskrit2003*) support many complex ligatures. Some of t
 
 ## 10. Recommended Unicode Fonts
 
-To ensure proper rendering of complex Devanagari conjuncts, ligatures, and Vedic accents in Windows applications (Word, Notepad, TeX), install a high-quality [Unicode font](http://en.wikipedia.org/wiki/Unicode_typeface) such as:
+To ensure proper rendering of complex Devanagari conjuncts, ligatures, and Vedic accents in Windows applications (Word, Notepad, TeX), install a high-quality [Unicode font](http://en.wikipedia.org/wiki/Unicode_typeface). The primary recommended Devanagari Unicode font is:
+
+- **Adishila** (Primary Recommended Font, available at [adishila.com/fonts](https://adishila.com/fonts/))
 - **Sanskrit2003** ([sanskritweb.net](http://www.sanskritweb.net/itrans/sans2003.zip))
-- **Adishila / Siddhanta**
-- **Noto Serif Devanagari** / **Gargi** / **Chandas**
+- **Siddhanta** / **Noto Serif Devanagari** / **Gargi** / **Chandas**
 
 ---
 

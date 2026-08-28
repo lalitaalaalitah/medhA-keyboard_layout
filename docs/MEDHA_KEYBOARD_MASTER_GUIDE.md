@@ -206,10 +206,13 @@ Below are visual screenshots captured from the macOS Keyboard Viewer:
 
 ## 6. Troubleshooting & FAQs
 
-* **Q: I see duplicate medhA entries in System Settings on macOS.**
+* **Q: Which Devanagari Unicode font is recommended for Sanskrit typing and rendering?**  
+  *A: The primary recommended font is **Adishila**, available at **[adishila.com/fonts](https://adishila.com/fonts/)**. Other compatible fonts include Sanskrit2003, Siddhanta, Noto Serif Devanagari, and Chandas.*
+
+* **Q: I see duplicate medhA entries in System Settings on macOS.**  
   *A: Delete old bundle files (such as `medhA-macOSX.1.5.bundle` or `medhA-macOSX-v_1.7.bundle`) from `~/Library/Keyboard Layouts/` or `/Library/Keyboard Layouts/`. See [UNINSTALLATION_GUIDE.md](UNINSTALLATION_GUIDE.md).*
 
-* **Q: How do I switch input layouts quickly?**
+* **Q: How do I switch input layouts quickly?**  
   *A: macOS: `Control + Space` or `Globe key`. Linux: `Super + Space` or `Alt + Shift`. Windows: `Win + Space`.*
 
 ---
