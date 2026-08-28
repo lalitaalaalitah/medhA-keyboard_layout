@@ -68,6 +68,7 @@ python3 scripts/package_keyboards.py --app-version 1.7.5 --platform all
 
 ## Repository Documentation Index
 
+- **[docs/MEDHA_KEYBOARD_MASTER_GUIDE.md](docs/MEDHA_KEYBOARD_MASTER_GUIDE.md)**: Comprehensive master guide & multi-platform manual.
 - **[HOW_TO_USE.md](HOW_TO_USE.md)**: Exhaustive multi-distro and multi-OS installation guide.
 - **[RELEASE_STANDARDS.md](RELEASE_STANDARDS.md)**: Release versioning standards, tag naming, and Homebrew Tap update procedure.
 - **[docs/WEBSITE_MAINTENANCE_HOW_TO.md](docs/WEBSITE_MAINTENANCE_HOW_TO.md)**: Architecture guide for maintaining website living guides & historical release posts.

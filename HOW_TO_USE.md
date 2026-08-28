@@ -163,6 +163,7 @@ For complete platform-specific uninstallation instructions, see **[UNINSTALLATIO
 ## Navigation Links
 
 - 🏠 **[Main Overview & Landing Page](README.md)**
+- 📘 **[Comprehensive Master Guide](docs/MEDHA_KEYBOARD_MASTER_GUIDE.md)**
 - ⚡ **[Quick Command Summary](README.md#quick-command-summary)**
 - 📋 **[Release Standards & Tap Workflow](RELEASE_STANDARDS.md)**
 - 🗑️ **[Uninstallation Guide](docs/UNINSTALLATION_GUIDE.md)**
