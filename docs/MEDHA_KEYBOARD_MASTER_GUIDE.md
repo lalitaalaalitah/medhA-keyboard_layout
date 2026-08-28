@@ -57,7 +57,8 @@ Traditional layout systems (like InScript) rearrange keys based on typewriter ge
 | :--- | :--- | :--- |
 | **v1.7.5** | August 2026 | Added automated Homebrew Cask sync, Nix Flake support (`nix-darwin` & NixOS), unified cross-platform release packager (`package_keyboards.py`), and enhanced Vedic svara mappings. |
 | **v1.7.0** | Early 2026 | Introduced updated macOS `.bundle` structure, standalone DMG installer, clean Linux XKB `sa` symbol integration, and Windows setup executables. |
-| **medhA 3** | Historical | Introduced special formatting shortcuts (`Ctrl+Shift+1` ZWJ, `Ctrl+Shift+2` ZWNJ, `Ctrl+Shift+3..5` Vedic Svaras), Marathi half-Ra (**र्‌क**), and explicit Virama control. |
+| **medhA 6** | Historical | Introduced **AltGr (Right Alt)** layer for full stop (`.`), comma (`,`), Rupee sign (`₹`), exclamation (`!`), and Vaidika signs directly without switching to English layout. |
+| **medhA 3** | Historical | Introduced special formatting shortcuts (`Ctrl+Shift+1` ZWJ, `Ctrl+Shift+2` ZWNJ, `Ctrl+Shift+3..5` Vedic Svaras), Marathi/Newari half-Ra (**र्‌क**), and explicit Virama control. |
 | **v1.0.0** | Initial Release | Core phonetic layout definition for macOS, Linux, and Windows. |
 
 > 📌 **Full Release Announcements**: Detailed historical release posts and changelogs are published on **[code.lalitaalaalitah.com](https://code.lalitaalaalitah.com)** and tagged on **[GitHub Releases](https://github.com/lalitaalaalitah/medhA-keyboard_layout/releases)**.

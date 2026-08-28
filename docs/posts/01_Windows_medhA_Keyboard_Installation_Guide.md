@@ -4,7 +4,8 @@
 **Website**: [https://www.lalitaalaalitah.com](https://www.lalitaalaalitah.com)  
 **Original Articles**:  
 - [medhA - Unicode Sanskrit Keyboard Layout for Windows](https://code.lalitaalaalitah.com/medha-6-unicode-sanskrit-keyboard-layou/)  
-- [medhA Keyboard Layout Sanskrit Overview](https://code.lalitaalaalitah.com/medha-keyboard-layout-sanskrit/)  
+- [medhA Keyboard Layout Sanskrit Overview](https://eng.lalitaalaalitah.com/medha-keyboard-layout-sanskrit)  
+- [Scheme for medhA 3](https://eng.lalitaalaalitah.com/scheme-for-medha-3)  
 - [medhA 3 in Single Bundle](https://code.lalitaalaalitah.com/medha-3-in-single-bundle/)  
 - [देवनागरी लिपि – मेधा (Hindi Language User Guide)](https://shaastrapriyaah.lalitaalaalitah.com/blog-post_28-4/)  
 **Published on**: [code.lalitaalaalitah.com](https://code.lalitaalaalitah.com)  
@@ -65,16 +66,26 @@ Mapping according to sound solves this completely:
 
 ---
 
-## 5. Evolution of medhA 3 & Special Typographic Controls
+## 5. Evolution of medhA 3 & medhA 6
 
-Older versions of `medhA` worked fine and remain the base of this keyboard layout series. However, special typographic characters and Vedic marks were needed that were unavailable in legacy layouts. This led to **`medhA 3`**, introducing dedicated key combinations:
+Older versions of `medhA` worked fine and remain the base of this keyboard layout series. However, as typing needs expanded, version updates introduced powerful new layers while strictly retaining the core phonetic mapping:
 
-### Key Combinations Introduced in medhA 3:
-* **`Ctrl + Shift + 1`**: Zero-Width Joiner (**ZWJ**)
-* **`Ctrl + Shift + 2`**: Zero-Width Non-Joiner (**ZWNJ**)
-* **`Ctrl + Shift + 3`**: Vedic Udatta (**॑** - `U+0951`)
-* **`Ctrl + Shift + 4`**: Vedic Anudatta (**॒** - `U+0952`)
-* **`Ctrl + Shift + 5`**: Vedic Swarita / Triple Udatta (**᳚** - `U+1CDA` / `U+0951`)
+### 5.1 Special Typographic Controls in medhA 3:
+- **`Ctrl + Shift + 1`**: Zero-Width Joiner (**ZWJ**)
+- **`Ctrl + Shift + 2`**: Zero-Width Non-Joiner (**ZWNJ**)
+- **`Ctrl + Shift + 3`**: Vedic Udatta (**॑** - `U+0951`)
+- **`Ctrl + Shift + 4`**: Vedic Anudatta (**॒** - `U+0952`)
+- **`Ctrl + Shift + 5`**: Vedic Swarita / Triple Udatta (**᳚** - `U+1CDA` / `U+0951`)
+
+### 5.2 AltGr Layer & Symbol Enhancements in medhA 6:
+Version 6 of the `medhA` keyboard for Unicode Sanskrit built directly upon `medhA 3`, maintaining 100% phonetic continuity while introducing the **AltGr (Right Alt)** key layer:
+- **No Layout Switching for Punctuation**: Previously, users had to toggle back to the English keyboard layout to type standard punctuation marks like full stops or commas. With `medhA 6`, the **`AltGr`** key allows you to type:
+  - **Full Stop (`.`)**: `AltGr + .`
+  - **Comma (`,`)**: `AltGr + ,`
+  - **Indian Rupee Sign (`₹`)**: `AltGr + Shift + 4` / `AltGr + R`
+  - **Exclamation Mark (`!`)**: `AltGr + !`
+  - **Additional Vaidika Signs & Accents**
+- **Single Executable Package**: Distributed as a direct installer executable (**`medha-6.exe`**) available in the repository under [`Windows/`](https://github.com/lalitaalaalitah/medhA-keyboard_layout/tree/master/Windows).
 
 ---
 
