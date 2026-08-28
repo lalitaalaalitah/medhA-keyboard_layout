@@ -178,6 +178,8 @@ To form conjunct consonants, type the first consonant, followed by Virama (`,`),
 * **Zero-Width Non-Joiner (ZWNJ - `Ctrl + Shift + 2`)**: Forces explicit Virama visibility:
   * `k` + `,` + `Ctrl+Shift+2` (ZWNJ) + `t` = **क्‌त**
 
+> 🇮🇳 **Hindi User Guide (संयुक्ताक्षर एवं देवनागरी प्रयोग)**: For step-by-step instructions in Hindi on writing conjunct consonants (संयुक्ताक्षर) and half-letters with `medhA`, see **[देवनागरी लिपि – मेधा (शास्त्राप्रियाः)](https://shaastrapriyaah.lalitaalaalitah.com/blog-post_28-4/)**.
+
 ---
 
 ### 4.6 Vedic Accents (Svaras)

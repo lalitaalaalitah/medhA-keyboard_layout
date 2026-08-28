@@ -6,6 +6,7 @@
 - [medhA - Unicode Sanskrit Keyboard Layout for Windows](https://code.lalitaalaalitah.com/medha-6-unicode-sanskrit-keyboard-layou/)  
 - [medhA Keyboard Layout Sanskrit Overview](https://code.lalitaalaalitah.com/medha-keyboard-layout-sanskrit/)  
 - [medhA 3 in Single Bundle](https://code.lalitaalaalitah.com/medha-3-in-single-bundle/)  
+- [देवनागरी लिपि – मेधा (Hindi Language User Guide)](https://shaastrapriyaah.lalitaalaalitah.com/blog-post_28-4/)  
 **Published on**: [code.lalitaalaalitah.com](https://code.lalitaalaalitah.com)  
 **GitHub Repository**: [https://github.com/lalitaalaalitah/medhA-keyboard_layout](https://github.com/lalitaalaalitah/medhA-keyboard_layout)  
 
@@ -78,6 +79,8 @@ Older versions of `medhA` worked fine and remain the base of this keyboard layou
 ---
 
 ## 6. How To Use Special Combinations & Linguistic Rationale
+
+> 🇮🇳 **Hindi Language Guide (हिन्दी माध्यम)**: A dedicated user guide in Hindi detailing Devanagari character input, संयुक्ताक्षर (conjunct consonants), and Marathi/Nepali half-Ra typing is available at **[देवनागरी लिपि – मेधा (शास्त्राप्रियाः)](https://shaastrapriyaah.lalitaalaalitah.com/blog-post_28-4/)**.
 
 ### 6.1 Zero-Width Joiner (ZWJ - `Ctrl + Shift + 1`)
 The Zero-Width Joiner is a non-visible formatting character used to write half-letters:
