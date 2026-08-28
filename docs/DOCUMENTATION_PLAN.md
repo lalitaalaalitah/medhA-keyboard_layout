@@ -10,6 +10,8 @@
 
 This document outlines the detailed structure and screenshot capture checklist for publishing three comprehensive technical posts on `code.lalitaalaalitah.com`, detailing the installation, layout map, usage, and troubleshooting of the `medhA` Sanskrit Keyboard Layout across macOS, Linux, and Windows.
 
+For website publishing architecture and long-term release maintenance rules (separating living master guides from historical release posts), see **[WEBSITE_MAINTENANCE_HOW_TO.md](WEBSITE_MAINTENANCE_HOW_TO.md)**.
+
 ---
 
 ## 2. Blog Post 1: *Installing & Mastering medhA Keyboard Layout on macOS*

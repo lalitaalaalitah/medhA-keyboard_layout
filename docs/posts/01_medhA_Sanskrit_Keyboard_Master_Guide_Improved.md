@@ -1,9 +1,9 @@
 # medhA Sanskrit Keyboard Layout – The Definitive Guide & Multi-Platform Manual
 
-**Author**: `lalitaalaalitah`  
-**Website**: [https://www.lalitaalaalitah.com](https://www.lalitaalaalitah.com)  
-**Published on**: [code.lalitaalaalitah.com](https://code.lalitaalaalitah.com)  
-**GitHub Repository**: [github.com/lalitaalaalitah/medhA-keyboard_layout](https://github.com/lalitaalaalitah/medhA-keyboard_layout)  
+**Author**: `lalitaalaalitah`
+**Website**: [https://www.lalitaalaalitah.com](https://www.lalitaalaalitah.com)
+**Published on**: [code.lalitaalaalitah.com](https://code.lalitaalaalitah.com)
+**GitHub Repository**: [github.com/lalitaalaalitah/medhA-keyboard_layout](https://github.com/lalitaalaalitah/medhA-keyboard_layout)
 
 ---
 
@@ -40,8 +40,8 @@ The `medhA` layout design relies on three core principles:
 
 ## 3. Special Characters & Advanced Devanagari Formatting
 
-### 3.1 Virama / Halanta, Anusvara & Visarga
-- **Virama / Halanta (्)**: Type `,` (comma). Used to suppress inherent vowels and construct conjunct consonants (e.g., `k` + `,` + `t` -> **क्त**).
+### 3.1 Halanta, Anusvara & Visarga
+- **Halanta (्)**: Type `,` (comma). Used to suppress inherent vowels and construct conjunct consonants (e.g., `k` + `,` + `t` -> **क्त**).
 - **Anusvara (ं)**: Type `.` (period).
 - **Visarga (ः)**: Type `/` (slash).
 - **Single Danda (।)**: Type `Shift + /`.

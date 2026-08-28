@@ -70,6 +70,7 @@ python3 scripts/package_keyboards.py --app-version 1.7.5 --platform all
 
 - **[HOW_TO_USE.md](HOW_TO_USE.md)**: Exhaustive multi-distro and multi-OS installation guide.
 - **[RELEASE_STANDARDS.md](RELEASE_STANDARDS.md)**: Release versioning standards, tag naming, and Homebrew Tap update procedure.
+- **[docs/WEBSITE_MAINTENANCE_HOW_TO.md](docs/WEBSITE_MAINTENANCE_HOW_TO.md)**: Architecture guide for maintaining website living guides & historical release posts.
 - **[docs/UNINSTALLATION_GUIDE.md](docs/UNINSTALLATION_GUIDE.md)**: Uninstallation & legacy version cleanup guide.
 - **[docs/DOCUMENTATION_PLAN.md](docs/DOCUMENTATION_PLAN.md)**: Blog post roadmap & screenshot inventory for `code.lalitaalaalitah.com`.
 - **[docs/HOMEBREW_RELEASE_PLAN.md](docs/HOMEBREW_RELEASE_PLAN.md)**: Homebrew Cask distribution plan.

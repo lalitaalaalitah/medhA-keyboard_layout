@@ -166,6 +166,7 @@ For complete platform-specific uninstallation instructions, see **[UNINSTALLATIO
 - ⚡ **[Quick Command Summary](README.md#quick-command-summary)**
 - 📋 **[Release Standards & Tap Workflow](RELEASE_STANDARDS.md)**
 - 🗑️ **[Uninstallation Guide](docs/UNINSTALLATION_GUIDE.md)**
+- 🌐 **[Website Maintenance & Publishing How-To](docs/WEBSITE_MAINTENANCE_HOW_TO.md)**
 - 🗺️ **[Documentation Plan](docs/DOCUMENTATION_PLAN.md)**
 
 
