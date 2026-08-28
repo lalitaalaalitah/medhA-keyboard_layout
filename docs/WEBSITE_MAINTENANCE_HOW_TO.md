@@ -6,6 +6,8 @@
 
 [← Back to Main README Overview](../README.md) | [How To Use Guide](../HOW_TO_USE.md) | [Release Standards](../RELEASE_STANDARDS.md)
 
+> 📌 **Website Publication Directive**: This document is the master specification that guides all content creation, layout structuring, and post updates for **[code.lalitaalaalitah.com](https://code.lalitaalaalitah.com)**.
+
 ---
 
 ## 1. Executive Summary & Problem Statement

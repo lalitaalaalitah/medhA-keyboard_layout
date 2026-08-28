@@ -163,11 +163,11 @@ For complete platform-specific uninstallation instructions, see **[UNINSTALLATIO
 ## Navigation Links
 
 - 🏠 **[Main Overview & Landing Page](README.md)**
-- 📘 **[Comprehensive Master Guide](docs/MEDHA_KEYBOARD_MASTER_GUIDE.md)**
+- 📘 **[Comprehensive Master Guide](docs/MEDHA_KEYBOARD_MASTER_GUIDE.md)** (Canonical source content for living pages on [code.lalitaalaalitah.com](https://code.lalitaalaalitah.com))
 - ⚡ **[Quick Command Summary](README.md#quick-command-summary)**
 - 📋 **[Release Standards & Tap Workflow](RELEASE_STANDARDS.md)**
 - 🗑️ **[Uninstallation Guide](docs/UNINSTALLATION_GUIDE.md)**
-- 🌐 **[Website Maintenance & Publishing How-To](docs/WEBSITE_MAINTENANCE_HOW_TO.md)**
+- 🌐 **[Website Maintenance & Publishing How-To](docs/WEBSITE_MAINTENANCE_HOW_TO.md)** (Master specification guiding website publication & post updates)
 - 🗺️ **[Documentation Plan](docs/DOCUMENTATION_PLAN.md)**
 
 

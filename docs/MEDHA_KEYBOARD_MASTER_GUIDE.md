@@ -7,6 +7,8 @@
 
 > 🟢 **Current Version**: `v1.7.5` | **Last Updated**: August 29, 2026 | [View GitHub Releases](https://github.com/lalitaalaalitah/medhA-keyboard_layout/releases)
 
+> 📌 **Website Publication Source**: This document is the canonical source content for the living Master Guide Page published on **[code.lalitaalaalitah.com](https://code.lalitaalaalitah.com)**. For website publishing rules, see **[WEBSITE_MAINTENANCE_HOW_TO.md](WEBSITE_MAINTENANCE_HOW_TO.md)**.
+
 ---
 
 ## Table of Contents
