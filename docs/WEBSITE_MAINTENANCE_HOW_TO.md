@@ -92,6 +92,34 @@ When publishing a new release (e.g., `v2.0.0`):
 
 ---
 
+## 5. Bidirectional Markdown <-> WordPress Sync Tool
+
+To automatically pull remote post content from **[code.lalitaalaalitah.com](https://code.lalitaalaalitah.com)** (or any site in the network), compare it with local repository `.md` files, perform a cohesive merge retaining historical notes, and update both local files and remote WordPress posts simultaneously:
+
+### 5.1 CLI Tool Location
+- Repository script: **`scripts/sync_wordpress_md.py`**
+- Centralized helper tool: **`website_manipulation_helpers/post_sync/sync_wordpress_md.py`**
+
+### 5.2 Command Examples
+
+```bash
+# 1. Preview changes and cohesive diff (dry-run mode)
+uv run scripts/sync_wordpress_md.py \
+  --domain code.lalitaalaalitah.com \
+  --slug medha-6-unicode-sanskrit-keyboard-layou \
+  --local-file docs/posts/01_Windows_medhA_Keyboard_Installation_Guide.md \
+  --dry-run
+
+# 2. Perform live bidirectional sync (updates local .md and remote WordPress post)
+uv run scripts/sync_wordpress_md.py \
+  --domain code.lalitaalaalitah.com \
+  --slug medha-mac-os \
+  --local-file docs/posts/01_macOS_medhA_Keyboard_Installation_Guide.md \
+  --sync
+```
+
+---
+
 ## Navigation Links
 
 - 🏠 **[Main Overview & Landing Page](../README.md)**
