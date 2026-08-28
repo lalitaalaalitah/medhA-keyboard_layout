@@ -220,6 +220,7 @@ For modular details, dedicated platform sub-pages, uninstallation steps, and mai
 
 - 📖 **[HOW_TO_USE.md](../HOW_TO_USE.md)**: Exhaustive multi-distro and multi-OS installation guide.
 - 🍎 **[macOS Installation Guide](posts/01_macOS_medhA_Keyboard_Installation_Guide.md)**: Detailed macOS manual and Homebrew/Nix setup.
+- 🪟 **[Windows Installation Guide](posts/01_Windows_medhA_Keyboard_Installation_Guide.md)**: Native MSKLC setup, XP/Vista/7/10/11 activation, & Sanskrit2003 font setup.
 - 📋 **[RELEASE_STANDARDS.md](../RELEASE_STANDARDS.md)**: Release versioning standards, tag naming, and Homebrew Tap update procedure.
 - 🌐 **[WEBSITE_MAINTENANCE_HOW_TO.md](WEBSITE_MAINTENANCE_HOW_TO.md)**: Architecture guide for maintaining website living guides & historical release posts.
 - 🗑️ **[UNINSTALLATION_GUIDE.md](UNINSTALLATION_GUIDE.md)**: Uninstallation & legacy version cleanup guide across all platforms.
