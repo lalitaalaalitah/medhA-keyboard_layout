@@ -11,7 +11,7 @@
 """
 ==============================================================================
 Script: sync_wordpress_md.py
-Version: 1.0.0
+Version: 1.0.1
 Author: lalitaalaalitah
 Website: https://www.lalitaalaalitah.com
 GitHub: https://github.com/lalitaalaalitah
@@ -33,7 +33,7 @@ import html2text
 import markdown
 from bs4 import BeautifulSoup
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 AUTHOR = "lalitaalaalitah"
 WEBSITE = "https://www.lalitaalaalitah.com"
 GITHUB = "https://github.com/lalitaalaalitah"
@@ -48,10 +48,6 @@ FG_PEACH = "\033[38;2;250;179;135m"
 FG_RED = "\033[38;2;243;139;168m"
 FG_BLUE = "\033[38;2;137;180;250m"
 
-SSH_HOST = "user@hostname_or_ip"
-SSH_KEY = "~/.ssh/id_ed25519"
-SSH_PORT = "65002"
-
 def print_banner():
     banner = f"""{BG_BASE}{FG_MAUVE}================================================={CLR_RESET}
 {BG_BASE}{FG_GREEN}   WordPress <-> Markdown Cohesive Sync Tool{CLR_RESET}
@@ -62,7 +58,37 @@ def print_banner():
 {BG_BASE}{FG_MAUVE}================================================={CLR_RESET}"""
     click.echo(banner)
 
-def pull_remote_post(domain, slug=None, post_id=0):
+def load_ssh_config(user_host, user_key, user_port):
+    """Dynamically loads SSH connection parameters from arguments, environment, or config.json."""
+    ssh_host = user_host or os.environ.get("WP_SYNC_SSH_HOST")
+    ssh_key = user_key or os.environ.get("WP_SYNC_SSH_KEY")
+    ssh_port = user_port or os.environ.get("WP_SYNC_SSH_PORT")
+
+    config_paths = [
+        os.path.expanduser("~/.config/website_helpers/config.json"),
+        "config.json",
+        "../config.json"
+    ]
+
+    for cfg in config_paths:
+        if (not ssh_host or not ssh_key or not ssh_port) and os.path.isfile(cfg):
+            try:
+                with open(cfg, "r", encoding="utf-8") as f:
+                    cdata = json.load(f)
+                    ssh_host = ssh_host or cdata.get("ssh_host")
+                    ssh_key = ssh_key or cdata.get("ssh_key")
+                    ssh_port = ssh_port or cdata.get("ssh_port")
+            except Exception:
+                pass
+
+    if not ssh_host or not ssh_key:
+        click.echo(f"{BG_BASE}{FG_RED}Error: SSH configuration missing. Please provide --ssh-host/--ssh-key, set WP_SYNC_SSH_HOST/WP_SYNC_SSH_KEY environment variables, or create ~/.config/website_helpers/config.json.{CLR_RESET}")
+        sys.exit(1)
+
+    ssh_port = str(ssh_port or "22")
+    return ssh_host, os.path.expanduser(ssh_key), ssh_port
+
+def pull_remote_post(domain, slug=None, post_id=0, ssh_host=None, ssh_key=None, ssh_port="22"):
     """Pulls WordPress post or page content via SSH remote PHP execution."""
     if not slug and not post_id:
         click.echo(f"{BG_BASE}{FG_RED}Error: Must provide either --slug or --post-id{CLR_RESET}")
@@ -111,10 +137,10 @@ if (!$post) {{
 
     ssh_cmd = [
         "ssh",
-        "-p", SSH_PORT,
-        "-i", SSH_KEY,
+        "-p", ssh_port,
+        "-i", ssh_key,
         "-o", "StrictHostKeyChecking=accept-new",
-        SSH_HOST,
+        ssh_host,
         remote_command
     ]
 
@@ -151,7 +177,6 @@ def convert_html_to_markdown(html_content):
     h.ignore_emphasis = False
     h.single_line_break = False
     md = h.handle(html_content)
-    # Clean trailing spaces and excessive blank lines
     md = re.sub(r'\n{3,}', '\n\n', md).strip()
     return md
 
@@ -167,7 +192,6 @@ def merge_markdown_cohesively(local_md, remote_md, title=None):
 
     merged_md = local_md.strip()
 
-    # Find unique remote sections (e.g. historical quotes or signature lines not in local)
     missing_remote_parts = []
     in_unique_block = False
     current_unique = []
@@ -193,9 +217,8 @@ def merge_markdown_cohesively(local_md, remote_md, title=None):
 
     return merged_md.strip()
 
-def push_updated_post(domain, post_id, title, slug, status, content_md, categories=None, tags=None):
+def push_updated_post(domain, post_id, title, slug, status, content_md, categories=None, tags=None, ssh_host=None, ssh_key=None, ssh_port="22"):
     """Pushes merged cohesive Markdown content back to WordPress site."""
-    # Convert Markdown to HTML for WordPress post_content
     html_content = markdown.markdown(content_md, extensions=['extra', 'codehilite', 'tables', 'fenced_code'])
 
     b64_title = base64.b64encode(title.encode("utf-8")).decode("ascii")
@@ -251,10 +274,10 @@ if (is_wp_error($res)) {{
 
     ssh_cmd = [
         "ssh",
-        "-p", SSH_PORT,
-        "-i", SSH_KEY,
+        "-p", ssh_port,
+        "-i", ssh_key,
         "-o", "StrictHostKeyChecking=accept-new",
-        SSH_HOST,
+        ssh_host,
         remote_command
     ]
 
@@ -287,18 +310,24 @@ if (is_wp_error($res)) {{
 @click.option('--slug', default=None, help='WordPress post/page slug')
 @click.option('--post-id', default=0, type=int, help='WordPress post/page ID')
 @click.option('--local-file', required=True, type=click.Path(exists=True), help='Path to local Markdown (.md) file')
+@click.option('--ssh-host', default=None, help='SSH host (user@hostname_or_ip)')
+@click.option('--ssh-key', default=None, help='SSH private key path')
+@click.option('--ssh-port', default=None, help='SSH port number')
 @click.option('--sync/--no-sync', default=True, help='Bidirectional sync mode (merge and update both remote & local)')
 @click.option('--dry-run', is_flag=True, help='Preview diff and merge without updating remote or local')
 @click.option('--version', is_flag=True, help='Show script version and exit')
-def main(domain, slug, post_id, local_file, sync, dry_run, version):
+def main(domain, slug, post_id, local_file, ssh_host, ssh_key, ssh_port, sync, dry_run, version):
     """Pulls WordPress post, compares with local Markdown, merges cohesively, and syncs."""
     print_banner()
 
     if version:
         sys.exit(0)
 
+    # Load SSH configuration dynamically
+    ssh_host, ssh_key, ssh_port = load_ssh_config(ssh_host, ssh_key, ssh_port)
+
     # 1. Pull Remote Post
-    remote_data = pull_remote_post(domain, slug=slug, post_id=post_id)
+    remote_data = pull_remote_post(domain, slug=slug, post_id=post_id, ssh_host=ssh_host, ssh_key=ssh_key, ssh_port=ssh_port)
 
     click.echo(f"\n{BG_BASE}{FG_GREEN}[✓] Remote Post Retrieved:{CLR_RESET}")
     click.echo(f"{BG_BASE}{FG_TEXT}  - ID: {remote_data['id']}{CLR_RESET}")
@@ -327,7 +356,7 @@ def main(domain, slug, post_id, local_file, sync, dry_run, version):
     if not diff_lines:
         click.echo(f"{BG_BASE}{FG_GREEN}[✓] Local file and remote WordPress post are in perfect sync!{CLR_RESET}")
     else:
-        for line in diff_lines[:30]:  # Show first 30 lines of diff
+        for line in diff_lines[:30]:
             if line.startswith('+'):
                 click.echo(f"{BG_BASE}{FG_GREEN}{line}{CLR_RESET}")
             elif line.startswith('-'):
@@ -359,7 +388,10 @@ def main(domain, slug, post_id, local_file, sync, dry_run, version):
             status=remote_data['status'],
             content_md=cohesive_md,
             categories=remote_data.get('categories'),
-            tags=remote_data.get('tags')
+            tags=remote_data.get('tags'),
+            ssh_host=ssh_host,
+            ssh_key=ssh_key,
+            ssh_port=ssh_port
         )
 
 if __name__ == '__main__':

@@ -98,7 +98,7 @@ To automatically pull remote post content from **[code.lalitaalaalitah.com](http
 
 ### 5.1 CLI Tool Location
 - Repository script: **`scripts/sync_wordpress_md.py`**
-- Centralized helper tool: **`website_manipulation_helpers/post_sync/sync_wordpress_md.py`**
+- Centralized helper tool: **`01_website_manipulation_helpers/post_sync/sync_wordpress_md.py`**
 
 ### 5.2 Command Examples
 
