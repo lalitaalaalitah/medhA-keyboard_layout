@@ -1,9 +1,9 @@
 # medhA Sanskrit Keyboard Layout – Master Guide & Multi-Platform Manual
 
-**Author**: `lalitaalaalitah`  
-**Website**: [https://www.lalitaalaalitah.com](https://www.lalitaalaalitah.com)  
-**Published on**: [code.lalitaalaalitah.com](https://code.lalitaalaalitah.com)  
-**GitHub Repository**: [https://github.com/lalitaalaalitah/medhA-keyboard_layout](https://github.com/lalitaalaalitah/medhA-keyboard_layout)  
+**Author**: `lalitaalaalitah`
+**Website**: [https://www.lalitaalaalitah.com](https://www.lalitaalaalitah.com)
+**Published on**: [code.lalitaalaalitah.com](https://code.lalitaalaalitah.com)
+**GitHub Repository**: [https://github.com/lalitaalaalitah/medhA-keyboard_layout](https://github.com/lalitaalaalitah/medhA-keyboard_layout)
 
 > 🟢 **Current Version**: `v1.7.5` | **Last Updated**: August 29, 2026 | [View GitHub Releases](https://github.com/lalitaalaalitah/medhA-keyboard_layout/releases)
 
@@ -166,7 +166,7 @@ services.xserver.xkb.extraLayouts.medhA = {
 
 To form conjunct consonants, type the first consonant, followed by Virama (`,`), followed by the second consonant:
 * `k` + `,` + `t` = **क्त** (k + ् + t)
-* `s` + `,` + `p` + `,` + `r` = **स्पृ** (with matra RI)
+* `s` + `,` + `p` + `&` = **स्पृ** (with matra RI)
 * `k` + `,` + `sh` = **क्ष**
 
 ---
@@ -194,22 +194,22 @@ To form conjunct consonants, type the first consonant, followed by Virama (`,`),
 Below are visual screenshots captured from the macOS Keyboard Viewer:
 
 ### 5.1 Unshifted State
-![medhA Keyboard Viewer Normal](posts/screenshots/medhA_macOS/medhA_1.7_normal.png)
+![medhA Keyboard Viewer Normal](screenshots/medhA_macOS/medhA_1.7_normal.png)
 
 ### 5.2 Shifted State
-![medhA Keyboard Viewer Shift](posts/screenshots/medhA_macOS/medhA_1.7_shift.png)
+![medhA Keyboard Viewer Shift](screenshots/medhA_macOS/medhA_1.7_shift.png)
 
 ### 5.3 CapsLock State
-![medhA Keyboard Viewer CapsLock](posts/screenshots/medhA_macOS/medhA_1.7_CapsLock.png)
+![medhA Keyboard Viewer CapsLock](screenshots/medhA_macOS/medhA_1.7_CapsLock.png)
 
 ---
 
 ## 6. Troubleshooting & FAQs
 
-* **Q: I see duplicate medhA entries in System Settings on macOS.**  
+* **Q: I see duplicate medhA entries in System Settings on macOS.**
   *A: Delete old bundle files (such as `medhA-macOSX.1.5.bundle` or `medhA-macOSX-v_1.7.bundle`) from `~/Library/Keyboard Layouts/` or `/Library/Keyboard Layouts/`. See [UNINSTALLATION_GUIDE.md](UNINSTALLATION_GUIDE.md).*
 
-* **Q: How do I switch input layouts quickly?**  
+* **Q: How do I switch input layouts quickly?**
   *A: macOS: `Control + Space` or `Globe key`. Linux: `Super + Space` or `Alt + Shift`. Windows: `Win + Space`.*
 
 ---
