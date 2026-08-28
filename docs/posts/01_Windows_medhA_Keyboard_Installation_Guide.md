@@ -3,6 +3,7 @@
 **Author**: `lalitaalaalitah`  
 **Website**: [https://www.lalitaalaalitah.com](https://www.lalitaalaalitah.com)  
 **Original Articles**:  
+- [medhA-6 Unicode Sanskrit Layout Detailed Guide](https://eng.lalitaalaalitah.com/medha-keyboard-layout-sanskrit/medha-6-unicode-sanskrit-keyboard-layou/)  
 - [medhA - Unicode Sanskrit Keyboard Layout for Windows](https://code.lalitaalaalitah.com/medha-6-unicode-sanskrit-keyboard-layou/)  
 - [medhA Keyboard Layout Sanskrit Overview](https://eng.lalitaalaalitah.com/medha-keyboard-layout-sanskrit)  
 - [Scheme for medhA 3](https://eng.lalitaalaalitah.com/scheme-for-medha-3)  
@@ -78,13 +79,20 @@ Older versions of `medhA` worked fine and remain the base of this keyboard layou
 - **`Ctrl + Shift + 5`**: Vedic Swarita / Triple Udatta (**᳚** - `U+1CDA` / `U+0951`)
 
 ### 5.2 AltGr Layer & Symbol Enhancements in medhA 6:
-Version 6 of the `medhA` keyboard for Unicode Sanskrit built directly upon `medhA 3`, maintaining 100% phonetic continuity while introducing the **AltGr (Right Alt)** key layer:
-- **No Layout Switching for Punctuation**: Previously, users had to toggle back to the English keyboard layout to type standard punctuation marks like full stops or commas. With `medhA 6`, the **`AltGr`** key allows you to type:
+Version 6 of `medhA` for Unicode Sanskrit built directly upon `medhA 3`, maintaining 100% phonetic sound continuity while introducing dedicated **AltGr (Right Alt)** key combinations:
+- **Punctuation & Currency without Layout Switching**:
   - **Full Stop (`.`)**: `AltGr + .`
   - **Comma (`,`)**: `AltGr + ,`
   - **Indian Rupee Sign (`₹`)**: `AltGr + Shift + 4` / `AltGr + R`
   - **Exclamation Mark (`!`)**: `AltGr + !`
-  - **Additional Vaidika Signs & Accents**
+- **Direct AltGr Devanagari & Vedic Character Mappings**:
+  - **`AltGr + a`**: Zero-Width Joiner (**ZWJ**)
+  - **`AltGr + b`**: Zero-Width Non-Joiner (**ZWNJ**) / Dviswarita (**द्विस्वरित - ᳚**)
+  - **`AltGr + z`**: Chandrabindu Virama (**चन्द्रबिन्दु विराम**)
+  - **`AltGr + x`**: Vedic Udatta (**उदात्त - ॑**)
+  - **`AltGr + c`**: Vedic Anudatta (**अनुदात्त - ॒**)
+  - **`AltGr + v`**: Yojaka / Hyphen (**योजक - ⸗ / -**)
+  - **`AltGr + n`**: Vedic Triswarita (**त्रिस्वरित - ᳛ / ᳚**)
 - **Single Executable Package**: Distributed as a direct installer executable (**`medha-6.exe`**) available in the repository under [`Windows/`](https://github.com/lalitaalaalitah/medhA-keyboard_layout/tree/master/Windows).
 
 ---
@@ -93,29 +101,47 @@ Version 6 of the `medhA` keyboard for Unicode Sanskrit built directly upon `medh
 
 > 🇮🇳 **Hindi Language Guide (हिन्दी माध्यम)**: A dedicated user guide in Hindi detailing Devanagari character input, संयुक्ताक्षर (conjunct consonants), and Marathi/Nepali half-Ra typing is available at **[देवनागरी लिपि – मेधा (शास्त्राप्रियाः)](https://shaastrapriyaah.lalitaalaalitah.com/blog-post_28-4/)**.
 
-### 6.1 Zero-Width Joiner (ZWJ - `Ctrl + Shift + 1`)
+### 6.1 Zero-Width Joiner (ZWJ - `Ctrl + Shift + 1` or `AltGr + a`)
 The Zero-Width Joiner is a non-visible formatting character used to write half-letters:
-- **Half-Letter Typing**: `k` + `,` (Virama) + `Ctrl+Shift+1` (ZWJ) + `t` = **क + ् + ZWJ + त = क्‌त**
+- **Half-Letter Typing**: `k` + `,` (Virama) + `Ctrl+Shift+1` (or `AltGr+a`) + `t` = **क + ् + ZWJ + त = क्‌त**
 - **Special Use (Newari & Marathi Half-Ra)**: Used to write Newari or Marathi half-Ra (**र्‌क**):
-  - `r` + `,` (Virama) + `Ctrl+Shift+1` (ZWJ) + `k` = **र्‌क**
+  - `r` + `,` (Virama) + `ZWJ` + `k` = **र्‌क**
 
-### 6.2 Zero-Width Non-Joiner (ZWNJ - `Ctrl + Shift + 2`)
+### 6.2 Zero-Width Non-Joiner (ZWNJ - `Ctrl + Shift + 2` or `AltGr + b`)
 The Zero-Width Non-Joiner is used to write consonants with a visible Virama/Halanta symbol (**क्‌त**):
-- **Explicit Virama Typing**: `k` + `,` (Virama) + `Ctrl+Shift+2` (ZWNJ) + `t` = **क + ् + ZWNJ + त = क्‌त**
+- **Explicit Virama Typing**: `k` + `,` (Virama) + `Ctrl+Shift+2` (or `AltGr+b`) + `t` = **क + ् + ZWNJ + त = क्‌त**
 
 ### 6.3 Standard Ligature (Default)
 If you do not use ZWJ or ZWNJ, typing consonants with Virama forms standard merged ligatures:
 - **Standard Ligature**: `k` + `,` (Virama) + `t` = **क + ् + त = क्त**
 
 ### 6.4 Vedic Accents (Udatta, Anudatta, Swarita)
-`Ctrl+Shift+3`, `Ctrl+Shift+4`, and `Ctrl+Shift+5` provide direct input for Vedic svara composition.
+- **Udatta (॑)**: `Ctrl + Shift + 3` or `AltGr + x`
+- **Anudatta (॒)**: `Ctrl + Shift + 4` or `AltGr + c`
+- **Swarita / Triswarita**: `Ctrl + Shift + 5` or `AltGr + n`
 
 ### Who Should Use ZWJ & ZWNJ?
 Unicode fonts (such as *Sanskrit2003*) support many complex ligatures. Some of these ligatures are very rarely used, and many readers find them strange or difficult to read. Those who do not want to use complex ligatures can use the Zero-Width Joiner or Non-Joiner to keep all combining consonants clear and visible in a simple way. (For more technical details on Unicode joining behavior, see [Unicode Standard Joining Rules](https://unicode.org/standard/where/)).
 
 ---
 
-## 7. Software Format Evolution & Download Instructions
+## 7. Self-Guided Testing & Keyboard Practice Workflow
+
+To quickly familiarize yourself with `medhA-6` on Windows:
+
+1. **Install Software**: Download `medhA-keyboard-Windows.zip` and double-click `medha-6.exe`.
+2. **Open Document Editor**: Launch MS Word, Notepad, or LibreOffice Writer.
+3. **Toggle Input Language**: Press **`Ctrl + Shift`** (or **`Left Alt + Left Shift`**) to switch the active keyboard layout to Sanskrit/medhA.
+4. **Test Key Layers Systematically**:
+   - **Test Unshifted Layer**: Press each letter key directly and observe the printed letter (`k` -> क, `g` -> ग, `t` -> त, `d` -> द).
+   - **Test Shift Layer**: Hold down **`Shift`** and press each key. Observe the aspirated consonants and full vowels (`Shift+k` -> ख, `Shift+g` -> घ).
+   - **Test AltGr Layer**: Press **`AltGr`** (the Alt key on the right-hand side of the keyboard) and press keys (`AltGr + .` -> `.`, `AltGr + ,` -> `,`, `AltGr + x` -> `॑`, `AltGr + c` -> `॒`).
+   - **Test Shift + AltGr Layer**: Hold **`Shift + AltGr`** and test additional signs.
+5. **Compare with Layout Pictures**: Compare the text on your screen with the official layout images. Remembering key positions is easy because sound matching aligns letters naturally!
+
+---
+
+## 8. Software Format Evolution & Download Instructions
 
 ### Historical Format Note
 * Early versions of `medhA` were compressed in [.iso](http://en.wikipedia.org/wiki/ISO_image) format and hosted on Google Groups (which is now defunct).
@@ -130,7 +156,7 @@ Unicode fonts (such as *Sanskrit2003*) support many complex ligatures. Some of t
 
 ---
 
-## 8. System Requirements & Windows Compatibility
+## 9. System Requirements & Windows Compatibility
 
 `medhA` is fully compatible across all versions of Microsoft Windows (32-bit, 64-bit, and ARM64 architecture):
 - **Modern Windows**: Windows 11, Windows 10
@@ -138,7 +164,7 @@ Unicode fonts (such as *Sanskrit2003*) support many complex ligatures. Some of t
 
 ---
 
-## 9. Step-by-Step Installation & Setup
+## 10. Step-by-Step Installation & Setup
 
 ### Modern Windows (Windows 10 & 11)
 
@@ -183,7 +209,7 @@ Unicode fonts (such as *Sanskrit2003*) support many complex ligatures. Some of t
 
 ---
 
-## 10. Recommended Unicode Fonts
+## 11. Recommended Unicode Fonts
 
 To ensure proper rendering of complex Devanagari conjuncts, ligatures, and Vedic accents in Windows applications (Word, Notepad, TeX), install a high-quality [Unicode font](http://en.wikipedia.org/wiki/Unicode_typeface). The primary recommended Devanagari Unicode font is:
 
@@ -193,7 +219,7 @@ To ensure proper rendering of complex Devanagari conjuncts, ligatures, and Vedic
 
 ---
 
-## 11. Complete Typing Reference Table
+## 12. Complete Typing Reference Table
 
 | Action / Character | Key Combination | Devanagari Output |
 | :--- | :--- | :--- |
@@ -202,15 +228,22 @@ To ensure proper rendering of complex Devanagari conjuncts, ligatures, and Vedic
 | **Visarga** | `/` (slash) | **ः** |
 | **Single Danda** | `Shift + /` | **।** |
 | **Double Danda** | `Shift + .` | **॥** |
-| **Zero-Width Joiner (ZWJ)** | `Ctrl + Shift + 1` | Half-consonant / **र्‌क** (Marathi & Newari half-Ra) |
-| **Zero-Width Non-Joiner (ZWNJ)** | `Ctrl + Shift + 2` | **क्‌त** (Explicit Virama form) |
-| **Vedic Udatta** | `Ctrl + Shift + 3` | **॑** (`U+0951`) |
-| **Vedic Anudatta** | `Ctrl + Shift + 4` | **॒** (`U+0952`) |
-| **Vedic Swarita** | `Ctrl + Shift + 5` | **᳚** (`U+1CDA`) |
+| **Zero-Width Joiner (ZWJ)** | `Ctrl + Shift + 1` / `AltGr + a` | Half-consonant / **र्‌क** (Marathi & Newari half-Ra) |
+| **Zero-Width Non-Joiner (ZWNJ)** | `Ctrl + Shift + 2` / `AltGr + b` | **क्‌त** (Explicit Virama form) |
+| **Chandrabindu Virama** | `AltGr + z` | **ꣳ / 🛑** (Chandrabindu Virama) |
+| **Vedic Udatta** | `Ctrl + Shift + 3` / `AltGr + x` | **॑** (`U+0951`) |
+| **Vedic Anudatta** | `Ctrl + Shift + 4` / `AltGr + c` | **॒** (`U+0952`) |
+| **Yojaka / Hyphen** | `AltGr + v` | **⸗ / -** |
+| **Vedic Dviswarita** | `AltGr + b` | **᳚** |
+| **Vedic Swarita / Triswarita** | `Ctrl + Shift + 5` / `AltGr + n` | **᳛ / ᳚** |
+| **Full Stop** | `AltGr + .` | **.** |
+| **Comma** | `AltGr + ,` | **,** |
+| **Exclamation Mark** | `AltGr + !` | **!** |
+| **Indian Rupee Sign** | `AltGr + Shift + 4` / `AltGr + R` | **₹** |
 
 ---
 
-## 12. Uninstallation & Re-installation
+## 13. Uninstallation & Re-installation
 
 To remove `medhA` from Windows:
 1. Open **Settings** -> **Apps** -> **Installed Apps** (or Control Panel -> Programs and Features).

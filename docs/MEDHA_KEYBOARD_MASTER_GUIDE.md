@@ -174,21 +174,24 @@ To form conjunct consonants, type the first consonant, followed by Virama (`,`),
 
 ### 4.5 Precision Controls: ZWJ & ZWNJ
 
-* **Zero-Width Joiner (ZWJ - `Ctrl + Shift + 1`)**: Prevents complex ligature formation and forces half-consonant appearance. Used for Marathi/Newari half-Ra:
-  * `r` + `,` + `Ctrl+Shift+1` (ZWJ) + `k` = **र्‌क**
-* **Zero-Width Non-Joiner (ZWNJ - `Ctrl + Shift + 2`)**: Forces explicit Virama visibility:
-  * `k` + `,` + `Ctrl+Shift+2` (ZWNJ) + `t` = **क्‌त**
+* **Zero-Width Joiner (ZWJ - `Ctrl + Shift + 1` / `AltGr + a`)**: Prevents complex ligature formation and forces half-consonant appearance. Used for Marathi/Newari half-Ra:
+  * `r` + `,` + `ZWJ` + `k` = **र्‌क**
+* **Zero-Width Non-Joiner (ZWNJ - `Ctrl + Shift + 2` / `AltGr + b`)**: Forces explicit Virama visibility:
+  * `k` + `,` + `ZWNJ` + `t` = **क्‌त**
 
 > 🇮🇳 **Hindi User Guide (संयुक्ताक्षर एवं देवनागरी प्रयोग)**: For step-by-step instructions in Hindi on writing conjunct consonants (संयुक्ताक्षर) and half-letters with `medhA`, see **[देवनागरी लिपि – मेधा (शास्त्राप्रियाः)](https://shaastrapriyaah.lalitaalaalitah.com/blog-post_28-4/)**.
 
 ---
 
-### 4.6 Vedic Accents (Svaras)
+### 4.6 Vedic Accents & Special Signs
 
-`medhA` includes native support for Vedic text composition:
-* **Udatta (॑)**: `U+0951` (`Ctrl + Shift + 3` / Devanagari Stress Sign Datta)
-* **Anudatta (॒)**: `U+0952` (`Ctrl + Shift + 4` / Devanagari Stress Sign Anudatta)
-* **Swarita / Triple Udatta (᳚)**: `U+1CDA` / `U+0951` (`Ctrl + Shift + 5`)
+`medhA` includes native support for Vedic text composition and special signs:
+* **Udatta (॑)**: `U+0951` (`Ctrl + Shift + 3` / `AltGr + x`)
+* **Anudatta (॒)**: `U+0952` (`Ctrl + Shift + 4` / `AltGr + c`)
+* **Swarita / Dviswarita (᳚)**: `U+1CDA` / `U+0951` (`Ctrl + Shift + 5` / `AltGr + b`)
+* **Triswarita (᳛)**: (`AltGr + n`)
+* **Chandrabindu Virama**: (`AltGr + z`)
+* **Yojaka / Hyphen**: (`AltGr + v`)
 
 ---
 
